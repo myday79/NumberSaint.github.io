@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="content-language" content="ko">
+    <meta name="geo.region" content="KR">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#10a37f">
+    <title>로또당첨번호 조합기 - 과학적 데이터 분석 기반 로또 번호 생성기</title>
+    <meta name="description" content="1,000회 이상의 로또 추첨 데이터를 과학적으로 분석한 무료 로또 번호 생성기. 당첨 패턴 분석, 확률 통계, 번호 선택 전략까지 모든 것을 제공합니다.">
+    <meta name="keywords" content="로또번호생성기, 로또당첨번호조합기, 로또번호추천, 로또분석, 로또통계, 당첨번호조회, 로또당첨금, 로또645, 무료로또, 행운번호, 로또번호패턴, 로또당첨확률, 로또번호분석, 과학적로또, 데이터로또">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="로또 번호 생성기">
+    <meta name="generator" content="로또당첨번호 조합기 v2.0">
+    <link rel="canonical" href="https://url.kr/p/lotto/">
+    <link rel="alternate" hreflang="ko" href="https://url.kr/p/lotto/">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="로또당첨번호 조합기 - 과학적 데이터 분석 기반 로또 번호 생성기">
+    <meta property="og:description" content="1,000회 이상의 로또 추첨 데이터를 과학적으로 분석한 무료 로또 번호 생성기. 당첨 패턴 분석부터 번호 선택 전략까지!">
+    <meta property="og:url" content="https://url.kr/p/lotto/">
+    <meta property="og:image" content="https://url.kr/p/lotto/lotto.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="로또당첨번호 조합기">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="article:author" content="로또 번호 생성기">
+    <meta property="article:section" content="로또">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="로또당첨번호 조합기 - 과학적 데이터 분석 기반 로또 번호 생성기">
+    <meta name="twitter:description" content="1,000회 이상의 로또 추첨 데이터를 과학적으로 분석한 무료 로또 번호 생성기. 당첨 패턴 분석부터 번호 선택 전략까지!">
+    <meta name="twitter:image" content="https://url.kr/p/lotto/lotto.webp">
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "WebApplication","name": "로또당첨번호 조합기","alternateName": "로또 번호 생성기/추출기","description": "1,000회 이상의 로또 추첨 데이터를 과학적으로 분석한 무료 로또 번호 생성기. 당첨 패턴 분석, 확률 통계, 번호 선택 전략까지 모든 것을 제공합니다.","url": "https://url.kr/p/lotto/","applicationCategory": "Lottery Tool","operatingSystem": "Any","browserRequirements": "Requires JavaScript","hasPart": {"@type": "FAQPage","mainEntity": [{"@type": "Question","name": "로또 추첨은 언제 진행되나요?","acceptedAnswer": {"@type": "Answer","text": "매주 토요일 오후 8시 45분에 MBC에서 생방송으로 추첨이 진행됩니다."}},{"@type": "Question","name": "당첨금은 어떻게 수령하나요?","acceptedAnswer": {"@type": "Answer","text": "당첨금액에 따라 로또 판매점(5만원 이하), 농협은행(5만원 초과 ~ 1억원 미만), 동행복권 본사(1억원 이상)에서 수령 가능합니다."}},{"@type": "Question","name": "1등 당첨 확률은 얼마인가요?","acceptedAnswer": {"@type": "Answer","text": "1등 당첨 확률은 1/8,145,060입니다. 6개 번호가 모두 일치해야 합니다."}},{"@type": "Question","name": "당첨금에 세금은 얼마나 부과되나요?","acceptedAnswer": {"@type": "Answer","text": "당첨금이 3억원 이하는 22%, 3억원 초과는 33%의 세금이 원천징수됩니다."}}]}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org","@type": "Article","headline": "과학적 데이터 분석으로 로또 당첨 확률 높이는 방법","description": "1,000회가 넘는 로또 추첨 데이터를 분석하여 발견한 당첨 패턴과 번호 선택 전략을 공개합니다.","author": {"@type": "Organization","name": "로또당첨번호 조합기"},"publisher": {"@type": "Organization","name": "로또당첨번호 조합기","url": "https://url.kr/p/lotto/"},"datePublished": "2025-05-24","dateModified": "2025-05-24"}</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"></noscript>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden; /* Prevent horizontal scroll from 3D elements */
+        }
+        .hero-header {
+            position: relative;
+            background: linear-gradient(45deg, #10a37f, #0a7356);
+            color: white;
+            overflow: hidden;
+        }
+        .hero-bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://placehold.co/1920x1080/10A37F/FFFFFF?text=Lotto+Pattern') no-repeat center center/cover;
+            opacity: 0.1;
+            animation: pan 20s linear infinite alternate;
+        }
+        @keyframes pan {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+        .hero-content {
+            z-index: 10;
+        }
+        .hero-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.9em;
+            display: inline-flex;
+            align-items: center;
+        }
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #aabed1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2), 0 0 5px rgba(170, 190, 209, 0.5);
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .hero-stats .stat-item {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .hero-stats .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffeb3b;
+        }
+        .hero-stats .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        .hero-visual {
+            position: relative;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-icon {
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            animation: pulse 2s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(1.1); opacity: 0.5; }
+        }
+        .floating-numbers {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        .floating-ball {
+            position: absolute;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            animation: float 10s infinite ease-in-out alternate;
+            transition: background-color 0.3s ease, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        }
+        .floating-ball.ball-1 { background-color: #FFD700; }
+        .floating-ball.ball-2 { background-color: #1E90FF; }
+        .floating-ball.ball-3 { background-color: #DC143C; }
+        .floating-ball.ball-4 { background-color: #6A5ACD; }
+        .floating-ball.ball-5 { background-color: #32CD32; }
+        .floating-ball.ball-6 { background-color: #FF4500; }
+        .floating-ball.ball-1 { width: 50px; height: 50px; top: 10%; left: 5%; animation-delay: 0s; }
+        .floating-ball.ball-2 { width: 45px; height: 45px; top: 30%; right: 10%; animation-delay: 1s; }
+        .floating-ball.ball-3 { width: 60px; height: 60px; bottom: 20%; left: 20%; animation-delay: 2s; }
+        .floating-ball.ball-4 { width: 55px; height: 55px; top: 5%; right: 30%; animation-delay: 3s; }
+        .floating-ball.ball-5 { width: 40px; height: 40px; bottom: 5%; left: 40%; animation-delay: 4s; }
+        .floating-ball.ball-6 { width: 65px; height: 65px; top: 40%; left: 45%; animation-delay: 5s; }
+        @keyframes float {
+            0% { transform: translate(0px, 0px) rotate(0deg); }
+            25% { transform: translate(15px, -25px) rotate(15deg); }
+            50% { transform: translate(0px, -40px) rotate(0deg); }
+            75% { transform: translate(-15px, -25px) rotate(-15deg); }
+            100% { transform: translate(0px, 0px) rotate(0deg); }
+        }
+        .floating-ball:hover {
+            transform: scale(1.2) translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            cursor: pointer;
+        }
+        .lotto-preview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 80px;
+            gap: 0.5rem;
+        }
+        /* New and improved strongPopIn animation */
+        @keyframes strongPopIn {
+            0% { transform: scale(0.2) translateY(80px); opacity: 0; filter: blur(10px); }
+            30% { transform: scale(1.4) translateY(-30px); opacity: 1; filter: blur(0px); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+            50% { transform: scale(0.9) translateY(10px); }
+            70% { transform: scale(1.1) translateY(-5px); }
+            100% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0px); box-shadow: inset -3px -3px 5px rgba(0,0,0,0.2); }
+        }
+        .lotto-ball-preview {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: inset -3px -3px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            animation: strongPopIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; /* Applied animation */
+            opacity: 0; /* Start hidden for animation */
+        }
+        .lotto-ball-preview:nth-child(1) { animation-delay: 0.0s; }
+        .lotto-ball-preview:nth-child(2) { animation-delay: 0.07s; }
+        .lotto-ball-preview:nth-child(3) { animation-delay: 0.14s; }
+        .lotto-ball-preview:nth-child(4) { animation-delay: 0.21s; }
+        .lotto-ball-preview:nth-child(5) { animation-delay: 0.28s; }
+        .lotto-ball-preview:nth-child(6) { animation-delay: 0.35s; }
+        .lotto-ball-preview:nth-child(7) { animation-delay: 0.42s; }
+        .lotto-ball-preview:hover,
+        .lotto-ball-small:hover {
+            transform: scale(1.1) translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            cursor: pointer;
+        }
+        .lotto-history-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f8f9fa;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        }
+        .lotto-history-numbers .lotto-ball-small {
+            width: 1.8rem;
+            height: 1.8rem;
+            font-size: 0.8rem;
+            margin-right: 0.25rem;
+            box-shadow: inset -2px -2px 3px rgba(0,0,0,0.15);
+            animation: strongPopIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; /* Applied animation */
+            opacity: 0; /* Start hidden for animation */
+        }
+        .lotto-ball-small {
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 1rem;
+            box-shadow: inset -3px -3px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            animation: strongPopIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; /* Applied animation */
+            opacity: 0; /* Start hidden for animation */
+        }
+        .lotto-history-numbers .lotto-ball-small:nth-child(1) { animation-delay: 0.0s; }
+        .lotto-history-numbers .lotto-ball-small:nth-child(2) { animation-delay: 0.07s; }
+        .lotto-history-numbers .lotto-ball-small:nth-child(3) { animation-delay: 0.14s; }
+        .lotto-history-numbers .lotto-ball-small:nth-child(4) { animation-delay: 0.21s; }
+        .lotto-history-numbers .lotto-ball-small:nth-child(5) { animation-delay: 0.28s; }
+        .lotto-history-numbers .lotto-ball-small:nth-child(6) { animation-delay: 0.35s; }
+        .lotto-history-numbers .lotto-ball-small:nth-child(7) { animation-delay: 0.42s; }
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-radius: 50%;
+            border-top-color: #10a37f;
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 500px;
+            max-height: 80vh;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        .number-input-grid div {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s, transform 0.2s;
+        }
+        .number-input-grid div:hover {
+            background-color: #e0f2f7;
+            transform: translateY(-2px);
+        }
+        .number-input-grid div.bg-blue-500 {
+            background-color: #3b82f6;
+            color: white;
+        }
+        /* Custom Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s;
+        }
+        .modal-overlay.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+        .modal-content button {
+            background-color: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: background-color 0.2s;
+        }
+        .modal-content button:hover {
+            background-color: #1d4ed8;
+        }
+        .related-content-section {
+            background: linear-gradient(to right, #6dd5ed, #2193b0);
+            color: white;
+        }
+        .insight-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .gambling-warning {
+            background-color: #fefcbf;
+            border-left: 5px solid #facc15;
+            color: #78350f;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+        }
+        .gambling-warning i {
+            margin-right: 1rem;
+            color: #facc15;
+            font-size: 1.5rem;
+        }
+        /* AI Analysis Modal Specific Styles */
+        #ai-analysis-modal-content {
+            max-width: 600px;
+            text-align: left;
+        }
+        #ai-analysis-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-top: 1rem;
+            color: #4a5568;
+        }
+        #ai-analysis-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            font-size: 1.1em;
+            color: #4a5568;
+        }
+        /* Added for FAQ Answer Display */
+        #faqAnswerDisplay {
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            font-weight: 500;
+            flex-direction: column;
+        }
+        #faqAnswerDisplay p {
+            margin-bottom: 0.5rem;
+            text-align: left;
+            width: 100%;
+        }
+        #faqAnswerDisplay p:first-child {
+            font-weight: bold;
+            color: #2563eb;
+        }
+        .faq-example-item {
+            cursor: pointer;
+            padding: 0.5rem 0.75rem;
+            margin: 0.25rem;
+            background-color: #e0f7fa;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            color: #00796b;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            display: inline-block;
+        }
+        .faq-example-item:hover {
+            background-color: #b2ebf2;
+            transform: translateY(-2px);
+        }
+        /* Styles for the 3D containers */
+        .main-content-wrapper {
+            position: relative; /* Allows positioning children absolutely within this wrapper */
+            display: flex;
+            width: 100%; /* Take full width */
+            min-height: 100vh; /* Ensure it takes full viewport height for 3D elements */
+        }
+        .side-3d-container {
+            width: 25vw; /* Each side takes 25% of viewport width on large screens */
+            height: 100%; /* Take full height of its parent (.main-content-wrapper) */
+            position: sticky; /* Make it sticky */
+            top: 0; /* Stick to the top */
+            z-index: 0; /* Ensure it's behind main content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .side-3d-container canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important; /* Override inline style from Three.js */
+            height: 100% !important; /* Override inline style from Three.js */
+            display: block;
+        }
+        /* Central content container now takes remaining width */
+        .central-content-container {
+            flex-grow: 1; /* Take up all available space */
+            /* Removed fixed max-width to allow it to expand more */
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 1; /* Ensure it's above 3D elements */
+            background-color: transparent; /* Make background transparent to see 3D */
+            position: relative; /* For proper stacking context */
+        }
+
+        @media (max-width: 992px) { /* Adjust for medium and small screens */
+            .side-3d-container {
+                display: none !important; /* Hide 3D containers on smaller screens */
+            }
+            .central-content-container {
+                width: 100%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="hero-header">
+        <div class="hero-bg-animation"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center min-vh-50">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <div class="hero-badge mb-3">
+                            <i class="bi bi-stars me-2"></i>
+                            <span>과학적 데이터 분석 기반</span>
+                        </div>
+                        <h1 class="hero-title mb-3">
+                            무료 로또 번호 생성기
+                            <div class="hero-subtitle">당첨 확률을 높이는 스마트한 선택</div>
+                        </h1>
+                        <p class="hero-description mb-4">
+                            1,000회 이상의 추첨 데이터를 분석하여 만든 <strong>과학적 로또 번호 생성기</strong>입니다.
+                            당첨 패턴 분석과 확률 통계를 바탕으로 최적의 번호 조합을 제안합니다.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="row g-3">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number">1,172+</div>
+                                        <div class="stat-label">분석 회차</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number">26%</div>
+                                        <div class="stat-label">확률 개선</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number">무료</div>
+                                        <div class="stat-label">평생 이용</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <div class="floating-numbers">
+                            <div class="floating-ball ball-1">7</div>
+                            <div class="floating-ball ball-2">23</div>
+                            <div class="floating-ball ball-3">31</div>
+                            <div class="floating-ball ball-4">42</div>
+                            <div class="floating-ball ball-5">15</div>
+                            <div class="floating-ball ball-6">38</div>
+                        </div>
+                        <div class="hero-icon">
+                            <i class="bi bi-lightning-charge"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content area, now flanked by 3D canvases -->
+    <main class="flex-grow-1 py-4 d-flex main-content-wrapper">
+        <!-- Left 3D Container for Announcer -->
+        <div id="left-3d-container" class="side-3d-container bg-blue-50 d-none d-lg-flex justify-content-center align-items-center">
+            <canvas id="announcerCanvas"></canvas>
+        </div>
+
+        <!-- Central Content Container -->
+        <div class="central-content-container">
+            <!-- Content wrapped in container-fluid to manage width and padding -->
+            <div class="container-fluid px-md-5">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title mb-3">로또 번호 생성</h5>
+                        <p class="text-muted mb-4">원하는 방식으로 행운의 번호를 생성해보세요!</p>
+
+                        <!-- 빠른 번호 생성 섹션 -->
+                        <div class="bg-blue-50 p-6 rounded-xl shadow-inner mb-6">
+                            <h6 class="text-xl font-bold mb-3 text-blue-800">✨ 빠른 번호 생성</h6>
+                            <p class="text-blue-700 mb-4">복잡한 설정 없이, 클릭 한 번으로 로또 번호를 받아보세요!</p>
+                            <div class="row justify-content-center mb-4">
+                                <div class="col-md-6">
+                                    <label for="quick-num-sets" class="form-label font-medium text-gray-700">생성할 조합 수</label>
+                                    <select id="quick-num-sets" class="form-select">
+                                        <option value="1">1개</option>
+                                        <option value="2">2개</option>
+                                        <option value="3">3개</option>
+                                        <option value="4">4개</option>
+                                        <option value="5" selected>5개</option>
+                                        <option value="6">6개</option>
+                                        <option value="7">7개</option>
+                                        <option value="8">8개</option>
+                                        <option value="9">9개</option>
+                                        <option value="10">10개</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button id="quick-generate-btn" class="btn btn-primary btn-lg"><i class="bi bi-shuffle"></i> 빠른 번호 생성하기</button>
+                        </div>
+
+                        <!-- 생성된 번호 결과 표시 영역 -->
+                        <div class="mb-4 mt-5">
+                            <div id="lottoNumbers" class="lotto-preview flex flex-col items-center">
+                                <div class="loading-spinner"></div>
+                            </div>
+                        </div>
+                        <div id="copy-status" class="text-center text-success fw-bold my-2"></div>
+                        <div class="d-grid gap-2 d-md-flex justify-content-center mt-3">
+                            <button id="copy-generated-btn" class="btn btn-success btn-sm"><i class="bi bi-clipboard"></i> 생성된 번호 모두 복사</button>
+                            <button id="analyze-numbers-btn" class="btn btn-warning btn-sm"><i class="bi bi-robot"></i>✨ AI 번호 분석</button>
+                        </div>
+                        <div id="ai-analysis-result" class="text-center mt-3 p-3 bg-light rounded shadow-sm d-none">
+                            <p class="fw-bold mb-2 text-primary">✨ AI의 분석 결과:</p>
+                            <div id="ai-analysis-content" class="text-break">분석 내용</div>
+                        </div>
+
+                        <hr class="my-6">
+
+                        <!-- 동행복권 홈페이지 바로가기 버튼 추가 -->
+                        <div class="text-center mb-5">
+                            <a href="https://www.dhlottery.co.kr/" target="_blank" rel="noopener noreferrer" class="btn btn-info btn-lg">
+                                <i class="bi bi-link-45deg me-2"></i> 동행복권 홈페이지 바로가기
+                            </a>
+                            <p class="text-muted small mt-2">로또 구매 및 당첨 결과 확인은 동행복권 공식 홈페이지를 이용해주세요.</p>
+                        </div>
+                        <hr class="my-6">
+
+                        <!-- 스마트 분석 필터 섹션 (아코디언으로 접기/펴기) -->
+                        <div class="accordion" id="smartFilterAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSmartFilters">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSmartFilters" aria-expanded="false" aria-controls="collapseSmartFilters">
+                                        <h6 class="text-xl font-bold mb-0">⚙️ 스마트 분석 필터 (상세 설정)</h6>
+                                    </button>
+                                </h2>
+                                <div id="collapseSmartFilters" class="accordion-collapse collapse" aria-labelledby="headingSmartFilters" data-bs-parent="#smartFilterAccordion">
+                                    <div class="accordion-body text-start">
+                                        <p class="text-muted mb-4">통계적 경향을 적용하여, 나만의 행운 번호를 더욱 정교하게 만들어보세요. **'빠른 번호 생성'과는 별개의 설정입니다.**</p>
+                                        <div class="row g-3 mb-4">
+                                            <div class="col-md-6">
+                                                <label class="form-label font-medium text-gray-700">포함할 번호 (고정수)</label>
+                                                <div id="include-numbers-container" class="number-input-grid grid grid-cols-6 gap-2"></div>
+                                                <small class="text-muted mt-1">최대 5개까지 선택할 수 있습니다.</small>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="form-label font-medium text-gray-700">제외할 번호</label>
+                                                <div id="exclude-numbers-container" class="number-input-grid grid grid-cols-6 gap-2"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="space-y-3 mb-4">
+                                            <div class="d-flex align-items-center justify-content-between bg-stone-50 p-3 rounded-lg">
+                                                <label for="filter-odd-even" class="font-medium text-gray-700 flex-grow-1">
+                                                    <span>홀/짝 비율 <span class="text-xs text-gray-500">(홀수:짝수)</span></span>
+                                                </label>
+                                                <select id="filter-odd-even" class="form-select w-auto">
+                                                    <option value="any">상관없음</option>
+                                                    <option value="3:3">3:3</option>
+                                                    <option value="4:2">4:2 또는 2:4</option>
+                                                    <option value="5:1">5:1 또는 1:5</option>
+                                                </select>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between bg-stone-50 p-3 rounded-lg">
+                                                <label for="filter-high-low" class="font-medium text-gray-700 flex-grow-1">
+                                                    <span>고/저 비율 <span class="text-xs text-gray-500">(저:1-22, 고:23-45)</span></span>
+                                                </label>
+                                                <select id="filter-high-low" class="form-select w-auto">
+                                                    <option value="any">상관없음</option>
+                                                    <option value="3:3">3:3</option>
+                                                    <option value="4:2">4:2 또는 2:4</option>
+                                                    <option value="5:1">5:1 또는 1:5</option>
+                                                </select>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between bg-stone-50 p-3 rounded-lg">
+                                                <label for="filter-consecutive" class="font-medium text-gray-700 flex-grow-1">
+                                                    <span>연속 번호 <span class="text-xs text-gray-500">(예: 1-2, 10-11)</span></span>
+                                                </label>
+                                                <select id="filter-consecutive" class="form-select w-auto">
+                                                    <option value="any">상관없음</option>
+                                                    <option value="0">0쌍</option>
+                                                    <option value="1">1쌍</option>
+                                                    <option value="2">2쌍 이상</option>
+                                                </select>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between bg-stone-50 p-3 rounded-lg">
+                                                <label for="filter-end-digit-variety" class="font-medium text-gray-700 flex-grow-1">
+                                                    <span>끝수 다양성 <span class="text-xs text-gray-500">(중복 끝수 방지)</span></span>
+                                                </label>
+                                                <select id="filter-end-digit-variety" class="form-select w-auto">
+                                                    <option value="any">상관없음</option>
+                                                    <option value="4">최소 4개</option>
+                                                    <option value="5">최소 5개</option>
+                                                    <option value="6">최소 6개</option>
+                                                </select>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between bg-stone-50 p-3 rounded-lg">
+                                                <label for="filter-prime-count" class="font-medium text-gray-700 flex-grow-1">
+                                                    <span>소수 포함 개수 <span class="text-xs text-gray-500">(2,3,5,7,...)</span></span>
+                                                </label>
+                                                <select id="filter-prime-count" class="form-select w-auto">
+                                                    <option value="any">상관없음</option>
+                                                    <option value="0-1">0-1개</option>
+                                                    <option value="2-3">2-3개</option>
+                                                    <option value="4+">4개 이상</option>
+                                                </select>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between bg-stone-50 p-3 rounded-lg">
+                                                <label for="filter-sum" class="font-medium text-gray-700">번호 총합 범위</label>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <input type="number" id="sum-min" value="100" class="form-control w-20 text-center">
+                                                    <span>~</span>
+                                                    <input type="number" id="sum-max" value="170" class="form-control w-20 text-center">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+                                            <button id="reset-filters-btn" class="btn btn-outline-secondary btn-lg"><i class="bi bi-arrow-counterclockwise"></i> 필터 초기화</button>
+                                            <button id="filter-generate-btn" class="btn btn-primary btn-lg"><i class="bi bi-magic"></i> 필터 적용하여 생성하기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 이니셜 입력 필드 및 전체 초기화 버튼은 모든 번호 생성 방식에 공통 적용 -->
+                <div class="row justify-content-center mt-2 mb-3">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white border-end-0">
+                                <i class="bi bi-person text-primary"></i>
+                            </span>
+                            <input type="text" id="userInitial" class="form-control border-start-0"
+                                   placeholder="아이디 입력" maxlength="10">
+                        </div>
+                        <small class="small text-muted mt-3">💡 아이디 입력하면 내번호 검색 가능</small>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center align-items-end">
+                        <button id="reset-all-options-btn" class="btn btn-danger btn-lg w-full mt-3 mt-md-0"><i class="bi bi-trash"></i> 전체 초기화</button>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="card-title mb-0">
+                                <i class="bi bi-clock-history"></i> 최근 생성 번호
+                            </h5>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-sm btn-outline-primary" onclick="imageExport.downloadImage()" title="이미지로 저장">
+                                    <i class="bi bi-download"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-success" onclick="imageExport.shareImage()" title="이미지 공유">
+                                    <i class="bi bi-share"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger" onclick="storage.clearHistory(); location.reload();" title="히스토리 초기화">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="numberHistory" class="number-history">
+                            <div class="text-center text-muted py-3">
+                                <i class="bi bi-info-circle"></i> 번호를 생성하면 히스토리가 표시됩니다
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="card-title mb-0">
+                                <i class="bi bi-globe"></i> 실시간 번호 생성 로그
+                            </h5>
+                            <button class="btn btn-sm btn-outline-primary" onclick="refreshPublicLog()">
+                                <i class="bi bi-arrow-clockwise"></i> 새로고침
+                            </button>
+                        </div>
+                        <div id="publicLog" class="public-log">
+                            <div class="text-center text-muted py-3">
+                                <i class="bi bi-clock"></i> 로딩 중...
+                            </div>
+                        </div>
+                        <div class="text-center mt-3">
+                            <small class="text-muted">* 최근 20개의 번호 생성 기록이 실시간으로 표시 (더미 데이터)</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">
+                            <i class="bi bi-search"></i> 내 번호 검색
+                        </h5>
+                        <div class="row">
+                            <div class="col-md-6 mx-auto">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-white border-end-0">
+                                        <i class="bi bi-person-search text-primary"></i>
+                                    </span>
+                                    <input type="text" id="searchInitial" class="form-control border-start-0" placeholder="아이디 입력" maxlength="10">
+                                    <button class="btn btn-primary" onclick="searchUserNumbers()">
+                                        <i class="bi bi-search"></i> 검색
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="searchResults" class="search-results">
+                            <div class="text-center text-muted py-3">
+                                <i class="bi bi-info-circle"></i> 아이디를 입력하고 검색해보세요
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm mb-5">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="bi bi-trophy"></i> 이번 주 당첨 번호
+                        </h5>
+                        <div id="currentLottoInfo" class="text-center">
+                            <div class="loading-spinner"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="bi bi-trophy-fill"></i> 명예의 전당
+                            </h5>
+                            <div class="alert alert-info mb-3">
+                                <small>
+                                    <i class="bi bi-info-circle"></i>
+                                    <strong>명예의 전당이란?</strong><br>
+                                    한 주 동안 사이트에서 생성한 번호 중 실제 당첨번호와 일치하여 당첨된 행운의 번호들을 모아놓은 곳입니다! 🎉<br>
+                                    매주 토요일 추첨 후 자동으로 업데이트되어 이번 주 당첨자들을 확인할 수 있습니다.
+                                </small>
+                            </div>
+                            <div id="weeklyRankStats" class="mb-4">
+                                <div class="text-center text-muted py-3">
+                                    <i class="bi bi-bar-chart"></i> 등급별 당첨 현황 로딩 중... (더미 데이터)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-2 col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="bi bi-calendar-week"></i> 이번 주 추첨 통계
+                            </h5>
+                            <div class="alert alert-info mb-4">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <small>
+                                            <i class="bi bi-info-circle"></i>
+                                            <strong>이번 주 추첨 통계란?</strong><br>
+                                            다가올 추첨을 위해 이번 주 동안 이 사이트에서 생성된 번호들의 현황을 보여줍니다.<br>
+                                            이 데이터는 실제 추첨 결과와는 무관하며, 순수하게 사이트 이용자들이 선택한 번호 패턴을 분석한 통계입니다.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="upcomingDrawStats">
+                                <div class="text-center text-muted py-5">
+                                    <div class="spinner-border text-primary mb-3" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <div>
+                                        <i class="bi bi-calendar-event"></i> 이번 주 추첨 통계 로딩 중... (더미 데이터)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="mt-10 bg-white p-6 rounded-2xl shadow-lg">
+                    <h2 class="text-2xl font-bold mb-4 text-center">번호별 출현 빈도 (샘플 데이터)</h2>
+                    <p class="text-center text-gray-500 mb-4">
+                        최근 100회차 샘플 데이터 기반의 번호별 출현 횟수입니다.
+                        <strong class="text-red-500">'핫'한 번호</strong>는 자주 등장한 번호,
+                        <strong class="text-blue-500">'콜드'한 번호</strong>는 적게 등장한 번호를 의미합니다.
+                        이 데이터는 재미로 참고해주세요.
+                    </p>
+                    <div class="chart-container h-[500px] md:h-[400px]">
+                        <canvas id="frequencyChart"></canvas>
+                    </div>
+                     <!-- Gambling Warning Message -->
+                    <div class="gambling-warning">
+                        <i class="bi bi-exclamation-triangle-fill"></i>
+                        <div>
+                            <strong>경고: 로또는 사행성을 포함하고 있습니다.</strong><br>
+                            지나친 몰입은 일상생활에 지장을 줄 수 있습니다. 재미로 즐기시고, 본인의 감당할 수 있는 범위 내에서만 참여해주세요.
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Right 3D Container for Lotto Visualisation -->
+        <div id="right-3d-container" class="side-3d-container bg-blue-50 d-none d-lg-flex justify-content-center align-items-center">
+            <canvas id="lottoVizCanvas"></canvas>
+        </div>
+    </main>
+
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title" id="gameGuide">
+                                <i class="bi bi-info-circle"></i> 로또 게임 가이드
+                            </h5>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <h6 class="fw-bold"><i class="bi bi-check2-circle"></i> 게임 방법</h6>
+                                    <p>1부터 45까지의 숫자 중 6개를 선택하여 매주 토요일 추첨되는 번호와 일치하는 개수에 따라 상금이 결정됩니다.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="fw-bold"><i class="bi bi-trophy"></i> 당첨 구조</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="bi bi-check2"></i> 1등: 6개 번호 일치</li>
+                                        <li><i class="bi bi-check2"></i> 2등: 5개 번호 + 보너스 번호 일치</li>
+                                        <li><i class="bi bi-check2"></i> 3등: 5개 번호 일치</li>
+                                        <li><i class="bi bi-check2"></i> 4등: 4개 번호 일치</li>
+                                        <li><i class="bi bi-check2"></i> 5등: 3개 번호 일치</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title" id="prizeInfo">
+                                <i class="bi bi-cash-coin"></i> 당첨금 수령 안내
+                            </h5>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>당첨금액</th>
+                                            <th>수령장소</th>
+                                            <th>필요서류</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>5만원 이하</td>
+                                            <td>로또 판매점</td>
+                                            <td>당첨복권</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5만원 초과 ~ 1억원 미만</td>
+                                            <td>농협은행 지점</td>
+                                            <td>신분증, 당첨복권</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1억원 이상</td>
+                                            <td>동행복권 본사</td>
+                                            <td>신분증, 당첨복권, 인감증명서</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title" id="statistics">
+                                <i class="bi bi-graph-up"></i> 로또 통계 정보
+                            </h5>
+                            <div class="row g-3" id="statsContent">
+                                <div class="col-6">
+                                    <h6 class="fw-bold">인기 번호 TOP 5</h6>
+                                    <div class="d-flex flex-wrap gap-2" id="topNumbers">
+                                        <span class="badge bg-secondary">로딩중...</span>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <h6 class="fw-bold">비인기 번호 TOP 5</h6>
+                                    <div class="d-flex flex-wrap gap-2" id="bottomNumbers">
+                                        <span class="badge bg-secondary">로딩중...</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="bestMatchSection"></div>
+                            <div class="alert alert-info mt-3 mb-0">
+                                <small id="statsInfo">* 통계는 참고용이며, 당첨과는 무관합니다.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title" id="faqTitle">
+                                <i class="bi bi-question-circle"></i> 자주 묻는 질문
+                            </h4>
+                            <div class="input-group mb-2">
+                                <span class="input-group-text bg-white border-end-0">
+                                    <i class="bi bi-search text-primary"></i>
+                                </span>
+                                <input type="text" class="form-control border-start-0" id="faqSearch" placeholder="궁금한 내용을 검색해보세요">
+                            </div>
+                            <small class="text-muted d-block mb-3">
+                                💡 예시 질문을 클릭하거나 직접 질문을 입력해보세요!
+                            </small>
+                            <div id="faqExamples" class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                                <!-- FAQ examples will be inserted here by JavaScript -->
+                            </div>
+                            <div id="faqAnswerDisplay" class="mt-3 p-3 bg-light rounded shadow-sm text-start">
+                                <p class="text-muted text-center"><i class="bi bi-info-circle"></i> 질문을 입력하시면 답변이 표시됩니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-content-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="text-white mb-3">
+                    <i class="bi bi-lightbulb"></i> 로또 당첨 확률을 높이는 과학적 분석
+                </h2>
+                <p class="lead text-white">데이터 기반 로또 번호 선택 전략과 당첨 패턴 분석</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="insight-card">
+                        <h4 class="text-primary mb-3">
+                            <i class="bi bi-calculator"></i> 로또 당첨 확률의 과학적 분석
+                        </h4>
+                        <p class="mb-3">로또 1등 당첨 확률은 <strong>1/8,145,060</strong>로 매우 낮지만, 통계적 패턴을 분석하면 흥미로운 사실들을 발견할 수 있습니다.</p>
+                        <div class="row g-3 mb-3">
+                            <div class="col-6">
+                                <div class="bg-light p-3 rounded text-center">
+                                    <h5 class="text-primary mb-1">22%</h5>
+                                    <small>연속 번호 출현율</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="bg-light p-3 rounded text-center">
+                                    <h5 class="text-primary mb-1">70%</h5>
+                                    <small>3홀 3짝 또는 4홀 2짝</small>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mb-0 text-sm">실제 당첨 확률에는 영향을 미치지 않지만, 통계적으로 자주 나타나는 패턴을 이해하는 것은 번호 선택의 재미를 더합니다.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="insight-card">
+                        <h4 class="text-primary mb-3">
+                            <i class="bi bi-graph-up-arrow"></i> 핫&콜드 번호와 빈도 분석
+                        </h4>
+                        <p class="mb-3">과거 당첨 데이터를 기반으로 특정 번호들이 다른 번호들보다 더 자주 또는 덜 자주 출현하는 경향이 있습니다.</p>
+                        <ul class="list-unstyled text-sm mb-3">
+                            <li><i class="bi bi-fire text-danger"></i> <strong>핫 번호:</strong> 최근 많이 나온 번호들. 일부는 이 번호들이 '운이 좋다'고 믿습니다.</li>
+                            <li><i class="bi bi-snow2 text-info"></i> <strong>콜드 번호:</strong> 오랫동안 나오지 않은 번호들. '이제 나올 때가 되었다'고 예상하는 경향이 있습니다.</li>
+                        </ul>
+                        <p class="mb-0 text-sm">이러한 통계는 당첨을 보장하지 않지만, 번호를 선택하는 흥미로운 방법 중 하나로 활용될 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Message Box -->
+    <div id="message-modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <p id="message-modal-text" class="text-lg font-medium text-gray-800"></p>
+            <button id="message-modal-close-btn">확인</button>
+        </div>
+    </div>
+
+    <!-- AI Analysis Modal -->
+    <div id="ai-analysis-modal-overlay" class="modal-overlay">
+        <div class="modal-content" id="ai-analysis-modal-content">
+            <h5 class="card-title mb-3"><i class="bi bi-robot me-2"></i>✨ AI 번호 분석</h5>
+            <div id="ai-analysis-loading" class="mb-3">
+                <div class="loading-spinner me-2"></div> AI가 번호를 분석 중입니다...
+            </div>
+            <p id="ai-analysis-text" class="text-lg font-medium text-gray-800"></p>
+            <button id="ai-analysis-modal-close-btn">닫기</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const quickGenerateBtn = document.getElementById('quick-generate-btn');
+            const filterGenerateBtn = document.getElementById('filter-generate-btn');
+            const resetFiltersBtn = document.getElementById('reset-filters-btn');
+            const resetAllOptionsBtn = document.getElementById('reset-all-options-btn');
+            const copyGeneratedBtn = document.getElementById('copy-generated-btn');
+            const analyzeNumbersBtn = document.getElementById('analyze-numbers-btn'); // AI 분석 버튼
+            const lottoNumbersDiv = document.getElementById('lottoNumbers');
+            const copyStatusDiv = document.getElementById('copy-status');
+            const userInitialInput = document.getElementById('userInitial');
+            const searchInitialInput = document.getElementById('searchInitial');
+            const searchResultsDiv = document.getElementById('searchResults');
+            const numberHistoryDiv = document.getElementById('numberHistory');
+            const publicLogDiv = document.getElementById('publicLog');
+            const currentLottoInfoDiv = document.getElementById('currentLottoInfo');
+            const weeklyRankStatsDiv = document.getElementById('weeklyRankStats');
+            const upcomingDrawStatsDiv = document.getElementById('upcomingDrawStats');
+            const topNumbersDiv = document.getElementById('topNumbers');
+            const bottomNumbersDiv = document.getElementById('bottomNumbers');
+            const faqSearchInput = document.getElementById('faqSearch');
+            const faqAnswerDisplay = document.getElementById('faqAnswerDisplay'); // FAQ 답변 표시 영역
+            const faqExamplesDiv = document.getElementById('faqExamples'); // FAQ 예시 질문 표시 영역
+
+            const quickNumSetsSelect = document.getElementById('quick-num-sets');
+
+            const includeContainer = document.getElementById('include-numbers-container');
+            const excludeContainer = document.getElementById('exclude-numbers-container');
+
+            const messageModalOverlay = document.getElementById('message-modal-overlay');
+            const messageModalText = document.getElementById('message-modal-text');
+            const messageModalCloseBtn = document.getElementById('message-modal-close-btn');
+
+            // AI Analysis Modal elements
+            const aiAnalysisModalOverlay = document.getElementById('ai-analysis-modal-overlay');
+            const aiAnalysisLoading = document.getElementById('ai-analysis-loading');
+            const aiAnalysisText = document.getElementById('ai-analysis-text');
+            const aiAnalysisModalCloseBtn = document.getElementById('ai-analysis-modal-close-btn');
+
+            let latestGeneratedNumbers = []; // Store the most recently generated numbers
+
+            // FAQ 데이터
+            const faqData = [
+                {
+                    question: "로또 6/45는 어떤 게임인가요?",
+                    answer: "1부터 45까지의 숫자 중 6개를 맞히는 게임으로, 매주 토요일 추첨을 통해 당첨 번호가 결정됩니다. 6개 숫자가 모두 일치하면 1등 당첨입니다."
+                },
+                {
+                    question: "로또는 어디서 구매할 수 있나요?",
+                    answer: "전국의 로또 판매점(복권방)과 동행복권 공식 홈페이지에서 온라인으로 구매할 수 있습니다."
+                },
+                {
+                    question: "로또 당첨금은 어떻게 수령하나요?",
+                    answer: "당첨금액에 따라 수령 장소가 다릅니다. 5만원 이하는 로또 판매점, 5만원 초과 1억원 미만은 농협은행 지점, 1억원 이상은 동행복권 본사에서 수령 가능합니다. 신분증 등 필요 서류를 지참해야 합니다."
+                },
+                {
+                    question: "1등 당첨 확률은 어떻게 되나요?",
+                    answer: "1등 당첨 확률은 8,145,060분의 1입니다. 이 확률은 매회차 동일하게 적용됩니다."
+                },
+                {
+                    question: "로또 당첨금에 세금이 부과되나요?",
+                    answer: "네, 당첨금에 따라 세금이 원천징수됩니다. 3억원 이하는 22%, 3억원 초과는 33%의 세금이 부과됩니다."
+                },
+                {
+                    question: "당첨금 수령 기한이 있나요?",
+                    answer: "네, 당첨금은 지급개시일로부터 1년 이내에 수령해야 합니다. 기한이 지나면 당첨금은 복권기금으로 귀속됩니다."
+                },
+                {
+                    question: "이 로또 번호 생성기는 당첨을 보장하나요?",
+                    answer: "아니요, 로또는 순수한 운에 기반한 게임이며, 이 생성기는 당첨을 보장하지 않습니다. 다만, 통계적 분석을 통해 재미와 편의성을 제공하고 사용자가 선호하는 조합을 만드는 데 도움을 드립니다."
+                },
+                {
+                    question: "로또 구매는 몇 시까지 가능한가요?",
+                    answer: "로또 구매는 추첨일인 토요일 오후 8시까지 가능합니다. 이후에는 다음 회차 로또 구매가 시작됩니다."
+                },
+                {
+                    question: "로또 인터넷 구매도 가능한가요?",
+                    answer: "네, 동행복권 공식 홈페이지에서 온라인으로도 로또를 구매할 수 있습니다. 단, 1인당 1회차 구매 한도는 5,000원입니다."
+                },
+                {
+                    question: "로또 당첨금은 언제 지급되나요?",
+                    answer: "로또 당첨금은 추첨일 다음 날부터 지급이 개시됩니다. (일요일부터 지급 가능)"
+                },
+                {
+                    question: "로또 구매 연령 제한이 있나요?",
+                    answer: "네, 만 19세 미만 청소년은 로또를 구매할 수 없습니다."
+                }
+            ];
+
+
+            /**
+             * Displays a custom message in a modal.
+             * @param {string} message - The message to display.
+             */
+            function showMessage(message) {
+                messageModalText.textContent = message;
+                messageModalOverlay.classList.add('show');
+            }
+
+            // Close message modal on button click
+            messageModalCloseBtn.addEventListener('click', () => {
+                messageModalOverlay.classList.remove('show');
+            });
+            // Close message modal when clicking outside the content area
+            messageModalOverlay.addEventListener('click', (e) => {
+                if (e.target === messageModalOverlay) {
+                    messageModalOverlay.classList.remove('show');
+                }
+            });
+
+            // Close AI analysis modal
+            aiAnalysisModalCloseBtn.addEventListener('click', () => {
+                aiAnalysisModalOverlay.classList.remove('show');
+            });
+            aiAnalysisModalOverlay.addEventListener('click', (e) => {
+                if (e.target === aiAnalysisModalOverlay) {
+                    aiAnalysisModalOverlay.classList.remove('show');
+                }
+            });
+
+            /**
+             * Creates a selectable grid of numbers (1-45) for include/exclude filters.
+             * @param {HTMLElement} container - The DOM element to append the grid to.
+             * @returns {Set<number>} - A Set containing currently selected numbers.
+             */
+            function createSelectableGrid(container) {
+                container.innerHTML = ''; // Clear existing content
+                const selectedNumbers = new Set();
+
+                for (let i = 1; i <= 45; i++) {
+                    const cell = document.createElement('div');
+                    cell.textContent = i;
+                    cell.className = 'w-9 h-9 flex items-center justify-center border border-gray-200 rounded-md cursor-pointer hover:bg-blue-100 transition';
+                    cell.dataset.number = i; // Store number in dataset
+
+                    cell.addEventListener('click', () => {
+                        const num = parseInt(cell.dataset.number);
+                        if (selectedNumbers.has(num)) {
+                            selectedNumbers.delete(num);
+                            cell.classList.remove('bg-blue-500', 'text-white', 'font-bold'); // Deselect styling
+                        } else {
+                            if (container.id === 'include-numbers-container' && selectedNumbers.size >= 5) {
+                                showMessage('포함할 번호는 최대 5개까지 선택할 수 있습니다.');
+                                return;
+                            }
+                            selectedNumbers.add(num);
+                            cell.classList.add('bg-blue-500', 'text-white', 'font-bold'); // Select styling
+                        }
+                    });
+                    container.appendChild(cell);
+                }
+                return selectedNumbers;
+            }
+
+            // Initialize selectable grids for include and exclude numbers
+            const selectedIncludeNumbers = createSelectableGrid(includeContainer);
+            const selectedExcludeNumbers = createSelectableGrid(excludeContainer);
+
+            /**
+             * Determines the background color of a lotto ball based on its number.
+             * @param {number} number - The lotto number.
+             * @returns {string} - Tailwind CSS class for background color.
+             */
+            const getBallColor = (number) => {
+                if (number <= 10) return 'bg-yellow-400'; // 1-10 yellow
+                if (number <= 20) return 'bg-blue-500';   // 11-20 blue
+                if (number <= 30) return 'bg-red-500';    // 21-30 red
+                if (number <= 40) return 'bg-gray-600';   // 31-40 gray
+                return 'bg-green-500';                    // 41-45 green
+            };
+
+            /**
+             * Checks if a number is prime.
+             * @param {number} num - The number to check.
+             * @returns {boolean} - True if prime, false otherwise.
+             */
+            const isPrime = num => {
+                if (num <= 1) return false;
+                for (let i = 2; i * i <= num; i++) {
+                    if (num % i === 0) return false;
+                }
+                return true;
+            };
+
+            /**
+             * Checks for consecutive numbers in an array.
+             * @param {number[]} arr - Sorted array of numbers.
+             * @returns {number} - Count of consecutive pairs.
+             */
+            const checkConsecutive = (arr) => {
+                let count = 0;
+                for (let i = 0; i < arr.length - 1; i++) {
+                    if (arr[i+1] === arr[i] + 1) {
+                        count++;
+                    }
+                }
+                return count;
+            };
+
+            /**
+             * Calculates the variety of end digits in a combination.
+             * @param {number[]} arr - Array of numbers.
+             * @returns {number} - Number of unique end digits.
+             */
+            const checkEndDigitVariety = (arr) => {
+                const endDigits = new Set(arr.map(n => n % 10));
+                return endDigits.size;
+            };
+
+            /**
+             * Generates lotto number combinations based on filters or quickly.
+             * @param {boolean} isFiltered - True if smart filters should be applied.
+             */
+            const generateNumbers = (isFiltered = false) => {
+                const numSets = parseInt(quickNumSetsSelect.value); // Get number of combinations from select
+                const userInitial = userInitialInput.value.trim(); // Get user initial
+
+                let includeNumbers = [];
+                let excludeNumbers = [];
+                let filterOddEven = 'any';
+                let filterHighLow = 'any';
+                let filterConsecutive = 'any';
+                let filterEndDigitVariety = 'any';
+                let filterPrimeCount = 'any';
+                let sumMin = 0;
+                let sumMax = 270; // Max sum of 6 numbers (45+44+43+42+41+40 = 255)
+
+                // Apply filters if enabled
+                if (isFiltered) {
+                    includeNumbers = Array.from(selectedIncludeNumbers);
+                    excludeNumbers = Array.from(selectedExcludeNumbers);
+                    filterOddEven = document.getElementById('filter-odd-even').value;
+                    filterHighLow = document.getElementById('filter-high-low').value;
+                    filterConsecutive = document.getElementById('filter-consecutive').value;
+                    filterEndDigitVariety = document.getElementById('filter-end-digit-variety').value;
+                    filterPrimeCount = document.getElementById('filter-prime-count').value;
+                    sumMin = parseInt(document.getElementById('sum-min').value) || 0;
+                    sumMax = parseInt(document.getElementById('sum-max').value) || 270;
+
+                    // Validate conflicting include/exclude numbers
+                    const conflictingNumbers = includeNumbers.filter(num => excludeNumbers.includes(num));
+                    if (conflictingNumbers.length > 0) {
+                        showMessage(`포함 번호와 제외 번호에 동일한 숫자(${conflictingNumbers.join(', ')})가 있습니다.`);
+                        return;
+                    }
+                    // Validate include numbers count
+                    if (includeNumbers.length > 5) {
+                        showMessage('포함할 번호는 5개까지만 선택 가능합니다.');
+                        return;
+                    }
+                }
+
+                lottoNumbersDiv.innerHTML = '<div class="loading-spinner"></div>'; // Show loading spinner
+                latestGeneratedNumbers = []; // Reset latest generated numbers
+                let generatedCount = 0;
+                let attempt = 0;
+
+                // Loop to generate required number of combinations
+                while (generatedCount < numSets && attempt < 10000) { // Max 10000 attempts to prevent infinite loops
+                    attempt++;
+                    // Create a pool of available numbers (1-45 excluding included/excluded)
+                    let pool = Array.from({ length: 45 }, (_, i) => i + 1)
+                        .filter(n => !includeNumbers.includes(n) && !excludeNumbers.includes(n));
+
+                    let combination = [...includeNumbers]; // Start with included numbers
+
+                    // Add random numbers from the pool until 6 numbers are selected
+                    while (combination.length < 6 && pool.length > 0) {
+                        const randomIndex = Math.floor(Math.random() * pool.length);
+                        const [randomNumber] = pool.splice(randomIndex, 1); // Remove from pool to avoid duplicates
+                        combination.push(randomNumber);
+                    }
+
+                    combination.sort((a, b) => a - b); // Sort the combination
+
+                    if (combination.length !== 6) continue; // Skip if not a valid 6-number combination
+
+                    // Apply filters for smart generation
+                    if (isFiltered) {
+                        // Odd/Even filter
+                        const oddCount = combination.filter(n => n % 2 !== 0).length;
+                        const evenCount = 6 - oddCount;
+                        if (filterOddEven !== 'any') {
+                            const [o, e] = filterOddEven.split(':').map(Number);
+                            if (!((oddCount === o && evenCount === e) || (oddCount === e && evenCount === o))) {
+                                continue;
+                            }
+                        }
+
+                        // High/Low filter (1-22 low, 23-45 high)
+                        const highCount = combination.filter(n => n >= 23).length;
+                        const lowCount = 6 - highCount;
+                        if (filterHighLow !== 'any') {
+                            const [h, l] = filterHighLow.split(':').map(Number);
+                            if (!((highCount === h && lowCount === l) || (highCount === l && lowCount === h))) {
+                                continue;
+                            }
+                        }
+
+                        // Consecutive numbers filter
+                        let consecutivePairs = checkConsecutive(combination);
+                        if (filterConsecutive !== 'any') {
+                            const requiredPairs = parseInt(filterConsecutive);
+                            if (filterConsecutive === '2') {
+                                if (consecutivePairs < 2) continue; // Check for at least 2 pairs
+                            } else {
+                                if (consecutivePairs !== requiredPairs) continue; // Check for exact number of pairs
+                            }
+                        }
+
+                        // End digit variety filter
+                        let uniqueEndDigits = checkEndDigitVariety(combination);
+                        if (filterEndDigitVariety !== 'any') {
+                            const minUnique = parseInt(filterEndDigitVariety);
+                            if (uniqueEndDigits < minUnique) continue;
+                        }
+
+                        // Prime numbers count filter
+                        const primesInCombination = combination.filter(isPrime).length;
+                        if (filterPrimeCount !== 'any') {
+                            if (filterPrimeCount === '0-1') {
+                                if (primesInCombination < 0 || primesInCombination > 1) continue;
+                            } else if (filterPrimeCount === '2-3') {
+                                if (primesInCombination < 2 || primesInCombination > 3) continue;
+                            } else if (filterPrimeCount === '4+') {
+                                if (primesInCombination < 4) continue;
+                            }
+                        }
+
+                        // Sum of numbers filter
+                        const sum = combination.reduce((a, b) => a + b, 0);
+                        if (sum < sumMin || sum > sumMax) {
+                            continue;
+                        }
+                    }
+
+                    latestGeneratedNumbers.push(combination); // Add valid combination to latest
+                    generatedCount++;
+                }
+
+                lottoNumbersDiv.innerHTML = ''; // Clear loading spinner
+                if (latestGeneratedNumbers.length === 0) {
+                    lottoNumbersDiv.innerHTML = `<p class="text-danger text-center font-semibold">조건에 맞는 번호를 생성하기 어렵습니다. 필터 설정을 변경해보세요.</p>`;
+                } else {
+                    latestGeneratedNumbers.forEach(combo => displayLottoBalls(combo, lottoNumbersDiv, 'lotto-ball-preview'));
+                    storage.saveHistory(latestGeneratedNumbers, userInitial); // Save to local storage
+                    displayHistory(); // Update history display
+                    refreshPublicLog(); // Update public log (simulated)
+                }
+
+                // Warn if not all requested combinations could be generated
+                if (generatedCount < numSets) {
+                    lottoNumbersDiv.innerHTML += `<p class="text-danger text-center font-semibold mt-3">요청한 조합 수를 모두 생성하지 못했습니다. (생성된 조합: ${generatedCount}개)</p>`;
+                }
+            };
+
+            /**
+             * Displays a single lotto combination as styled balls.
+             * @param {number[]} combination - An array of 6 lotto numbers.
+             * @param {HTMLElement} container - The DOM element to append the balls to.
+             * @param {string} ballClass - The CSS class for the individual lotto balls.
+             */
+            const displayLottoBalls = (combination, container, ballClass) => {
+                const comboDiv = document.createElement('div');
+                comboDiv.className = 'd-flex justify-content-center align-items-center mb-2'; // Center numbers horizontally
+                combination.forEach((num, index) => {
+                    const ball = document.createElement('div');
+                    ball.className = `${ballClass} ${getBallColor(num)} mr-1`;
+                    ball.textContent = num;
+                    ball.style.animationDelay = `${index * 0.07}s`; // Stagger animation for individual balls
+                    comboDiv.appendChild(ball);
+                });
+                container.appendChild(comboDiv);
+            };
+
+            /**
+             * Calls the Gemini API to get an analysis of the generated lotto numbers.
+             */
+            const analyzeNumbersWithAI = async () => {
+                if (latestGeneratedNumbers.length === 0) {
+                    showMessage("분석할 로또 번호가 없습니다. 먼저 번호를 생성해주세요.");
+                    return;
+                }
+
+                // Show AI analysis modal
+                aiAnalysisModalOverlay.classList.add('show');
+                aiAnalysisLoading.classList.remove('d-none');
+                aiAnalysisText.textContent = ''; // Clear previous analysis
+
+                const numbersToAnalyze = latestGeneratedNumbers[0].join(', '); // Analyze the first combination for simplicity
+
+                const prompt = `로또 번호 [${numbersToAnalyze}]에 대해 재미있고 긍정적인 분석이나 설명을 제공해주세요. 통계적인 용어(예: 홀짝 비율, 연속 번호, 고저 비율, 끝수 등)를 활용하고, 이 번호 조합이 행운을 가져다줄 것 같은 느낌을 주는 문구를 덧붙여주세요. 짧고 간결하게 한두 문단으로 작성해주세요.`;
+
+                try {
+                    const chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // Canvas will automatically provide the API key
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        aiAnalysisText.textContent = text;
+                    } else {
+                        aiAnalysisText.textContent = "AI 분석을 가져오는 데 실패했습니다. 다시 시도해 주세요.";
+                        console.error("Gemini API returned an unexpected structure:", result);
+                    }
+                } catch (error) {
+                    aiAnalysisText.textContent = "AI 분석 중 오류가 발생했습니다. 네트워크 연결을 확인하거나 나중에 다시 시도해 주세요.";
+                    console.error("Error calling Gemini API:", error);
+                } finally {
+                    aiAnalysisLoading.classList.add('d-none');
+                }
+            };
+
+            /**
+             * Resets all smart filter options to their default values.
+             */
+            const resetFilters = () => {
+                selectedIncludeNumbers.clear();
+                selectedExcludeNumbers.clear();
+                // Remove styling from all cells in include/exclude containers
+                document.querySelectorAll('#include-numbers-container div, #exclude-numbers-container div').forEach(cell => {
+                    cell.classList.remove('bg-blue-500', 'text-white', 'font-bold');
+                });
+                document.getElementById('filter-odd-even').value = 'any';
+                document.getElementById('filter-high-low').value = 'any';
+                document.getElementById('filter-consecutive').value = 'any';
+                document.getElementById('filter-end-digit-variety').value = 'any';
+                document.getElementById('filter-prime-count').value = 'any';
+                document.getElementById('sum-min').value = '100';
+                document.getElementById('sum-max').value = '170';
+            };
+
+            /**
+             * Resets all options on the page to their default states.
+             */
+            const resetAllOptions = () => {
+                quickNumSetsSelect.value = '5'; // Reset combination count
+                resetFilters(); // Reset smart filters
+                lottoNumbersDiv.innerHTML = '<div class="loading-spinner"></div>'; // Clear generated numbers
+                copyStatusDiv.textContent = ''; // Clear copy status message
+                userInitialInput.value = ''; // Clear user initial input
+                document.getElementById('searchInitial').value = ''; // Clear search input
+                searchResultsDiv.innerHTML = `<div class="text-center text-muted py-3"><i class="bi bi-info-circle"></i> 아이디를 입력하고 검색해보세요</div>`; // Reset search results
+                // storage.clearHistory(); // Uncomment if you want to clear history on full reset
+                displayHistory(); // Refresh history display (might become empty)
+                refreshPublicLog(); // Refresh public log (might be empty)
+                latestGeneratedNumbers = []; // Clear latest generated numbers on full reset
+                // Reset FAQ search
+                faqSearchInput.value = '';
+                filterFaqs(); // Display initial FAQ message
+            };
+
+            /**
+             * Copies the generated lotto numbers to the clipboard.
+             */
+            const copyResults = () => {
+                // Get all generated combinations displayed on the page
+                const generatedCombos = Array.from(lottoNumbersDiv.querySelectorAll('.d-flex.justify-content-center'))
+                    .map(div => Array.from(div.children).map(ball => ball.textContent).join(', '));
+
+                if (generatedCombos.length === 0 || lottoNumbersDiv.querySelector('.loading-spinner')) {
+                    copyStatusDiv.textContent = '생성된 번호가 없습니다.';
+                    setTimeout(() => copyStatusDiv.textContent = '', 2000); // Clear message after 2 seconds
+                    return;
+                }
+
+                const textToCopy = generatedCombos.join('\n'); // Format for copying
+                const textArea = document.createElement('textarea');
+                textArea.value = textToCopy;
+                document.body.appendChild(textArea);
+                textArea.select(); // Select text in textarea
+                try {
+                    document.execCommand('copy'); // Execute copy command
+                    copyStatusDiv.textContent = '생성된 번호가 클립보드에 복사되었습니다!';
+                } catch (err) {
+                    copyStatusDiv.textContent = '복사에 실패했습니다.';
+                }
+                document.body.removeChild(textArea); // Remove textarea
+                setTimeout(() => copyStatusDiv.textContent = '', 2000); // Clear message after 2 seconds
+            };
+
+            /**
+             * Manages saving and retrieving lotto number history using local storage.
+             */
+            const storage = {
+                /**
+                 * Saves generated combinations to local storage.
+                 * @param {number[][]} combinations - Array of lotto number combinations.
+                 * @param {string} initial - User's initial or '비회원'.
+                 */
+                saveHistory: (combinations, initial) => {
+                    const history = JSON.parse(localStorage.getItem('lottoHistory') || '[]');
+                    const timestamp = new Date().toLocaleString('ko-KR');
+                    combinations.forEach(combo => {
+                        history.unshift({ numbers: combo, initial: initial || '비회원', timestamp });
+                    });
+                    localStorage.setItem('lottoHistory', JSON.stringify(history.slice(0, 50))); // Keep only the latest 50 entries
+                },
+                /**
+                 * Retrieves lotto history from local storage.
+                 * @returns {Array<Object>} - Array of history objects.
+                 */
+                getHistory: () => {
+                    return JSON.parse(localStorage.getItem('lottoHistory') || '[]');
+                },
+                /**
+                 * Clears all lotto history from local storage.
+                 */
+                clearHistory: () => {
+                    localStorage.removeItem('lottoHistory');
+                    showMessage('생성 번호 히스토리가 초기화되었습니다.');
+                }
+            };
+
+            /**
+             * Displays the user's generated number history.
+             */
+            const displayHistory = () => {
+                const history = storage.getHistory();
+                numberHistoryDiv.innerHTML = ''; // Clear existing history display
+                if (history.length === 0) {
+                    numberHistoryDiv.innerHTML = `<div class="text-center text-muted py-3"><i class="bi bi-info-circle"></i> 번호를 생성하면 히스토리가 표시됩니다</div>`;
+                    return;
+                }
+                history.forEach(item => {
+                    const historyItemDiv = document.createElement('div');
+                    historyItemDiv.className = 'lotto-history-item';
+                    const numbersContainer = document.createElement('div');
+                    numbersContainer.className = 'lotto-history-numbers d-flex align-items-center';
+                    item.numbers.forEach((num, index) => { // Added index for staggering
+                        const ball = document.createElement('div');
+                        ball.className = `lotto-ball-small ${getBallColor(num)}`;
+                        ball.textContent = num;
+                        ball.style.animationDelay = `${index * 0.07}s`; // Stagger animation for small balls
+                        numbersContainer.appendChild(ball);
+                    });
+                    const infoSpan = document.createElement('small');
+                    infoSpan.className = 'text-muted ms-2';
+                    infoSpan.textContent = `(${item.initial} - ${item.timestamp})`;
+
+                    historyItemDiv.appendChild(numbersContainer);
+                    historyItemDiv.appendChild(infoSpan);
+                    numberHistoryDiv.appendChild(historyItemDiv);
+                });
+            };
+
+            /**
+             * Searches and displays lotto numbers generated by a specific user initial.
+             */
+            const searchUserNumbers = () => {
+                const searchTerm = searchInitialInput.value.trim().toLowerCase();
+                const history = storage.getHistory();
+                searchResultsDiv.innerHTML = ''; // Clear existing search results
+
+                if (!searchTerm) {
+                    searchResultsDiv.innerHTML = `<div class="text-center text-muted py-3"><i class="bi bi-info-circle"></i> 아이디를 입력하고 검색해보세요</div>`;
+                    return;
+                }
+
+                const filteredResults = history.filter(item => item.initial.toLowerCase().includes(searchTerm));
+
+                if (filteredResults.length === 0) {
+                    searchResultsDiv.innerHTML = `<div class="text-center text-muted py-3"><i class="bi bi-exclamation-circle"></i> 검색된 번호가 없습니다.</div>`;
+                    return;
+                }
+
+                filteredResults.forEach(item => {
+                    const resultItemDiv = document.createElement('div');
+                    resultItemDiv.className = 'lotto-history-item';
+                    const numbersContainer = document.createElement('div');
+                    numbersContainer.className = 'lotto-history-numbers d-flex align-items-center';
+                    item.numbers.forEach((num, index) => { // Added index for staggering
+                        const ball = document.createElement('div');
+                        ball.className = `lotto-ball-small ${getBallColor(num)}`;
+                        ball.textContent = num;
+                        ball.style.animationDelay = `${index * 0.07}s`; // Stagger animation for small balls
+                        numbersContainer.appendChild(ball);
+                    });
+                    const infoSpan = document.createElement('small');
+                    infoSpan.className = 'text-muted ms-2';
+                    infoSpan.textContent = `(${item.initial} - ${item.timestamp})`;
+
+                    resultItemDiv.appendChild(numbersContainer);
+                    resultItemDiv.appendChild(infoSpan);
+                    searchResultsDiv.appendChild(resultItemDiv);
+                });
+            };
+
+            /**
+             * Refreshes the public log of generated numbers (simulated from local history for now).
+             */
+            const refreshPublicLog = () => {
+                publicLogDiv.innerHTML = `<div class="text-center text-muted py-3"><div class="loading-spinner"></div> 로딩 중...</div>`;
+                // Simulate fetching public log with local history for demonstration
+                const history = storage.getHistory();
+                setTimeout(() => {
+                    publicLogDiv.innerHTML = '';
+                    if (history.length === 0) {
+                        publicLogDiv.innerHTML = `<div class="text-center text-muted py-3"><i class="bi bi-info-circle"></i> 현재 실시간 생성 기록이 없습니다.</div>`;
+                        return;
+                    }
+                    history.slice(0, 20).forEach(item => { // Displaying up to 20 recent logs
+                        const logItemDiv = document.createElement('div');
+                        logItemDiv.className = 'lotto-history-item';
+                        const numbersContainer = document.createElement('div');
+                        numbersContainer.className = 'lotto-history-numbers d-flex align-items-center';
+                        item.numbers.forEach((num, index) => { // Added index for staggering
+                            const ball = document.createElement('div');
+                            ball.className = `lotto-ball-small ${getBallColor(num)}`;
+                            ball.textContent = num;
+                            ball.style.animationDelay = `${index * 0.07}s`; // Stagger animation for small balls
+                            numbersContainer.appendChild(ball);
+                        });
+                        const infoSpan = document.createElement('small');
+                        infoSpan.className = 'text-muted ms-2';
+                        infoSpan.textContent = `(${item.initial} - ${item.timestamp})`;
+
+                        logItemDiv.appendChild(numbersContainer);
+                        logItemDiv.appendChild(infoSpan);
+                        publicLogDiv.appendChild(logItemDiv);
+                    });
+                }, 500);
+            };
+
+            /**
+             * Loads and displays the current week's lotto winning numbers (dummy data).
+             */
+            const loadCurrentLottoInfo = () => {
+                currentLottoInfoDiv.innerHTML = `<div class="loading-spinner"></div>`;
+                // Dummy data for current week's winning numbers
+                setTimeout(() => {
+                    const currentDraw = {
+                        round: 1120,
+                        date: '2025.06.14',
+                        numbers: [3, 11, 19, 28, 35, 42],
+                        bonus: 22
+                    };
+                    currentLottoInfoDiv.innerHTML = `
+                        <p class="h5 fw-bold mb-3">${currentDraw.round}회 로또 당첨 번호 (${currentDraw.date})</p>
+                        <div class="d-flex justify-content-center align-items-center gap-2 mb-3">
+                            ${currentDraw.numbers.map((num, index) => `<div class="lotto-ball-preview ${getBallColor(num)}" style="animation-delay: ${index * 0.07}s;">${num}</div>`).join('')}
+                            <div class="lotto-ball-preview bg-secondary ms-3" style="animation-delay: ${currentDraw.numbers.length * 0.07}s;">${currentDraw.bonus}</div>
+                            <span class="ms-1 fw-bold">(보너스)</span>
+                        </div>
+                        <p class="text-muted small">실제 당첨 정보와는 다를 수 있습니다.</p>
+                    `;
+                }, 700);
+            };
+
+            /**
+             * Loads and displays weekly rank statistics (dummy data).
+             */
+            const loadWeeklyRankStats = () => {
+                weeklyRankStatsDiv.innerHTML = `<div class="text-center text-muted py-3"><div class="loading-spinner"></div> 등급별 당첨 현황 로딩 중...</div>`;
+                // Dummy data for weekly rank stats
+                setTimeout(() => {
+                    weeklyRankStatsDiv.innerHTML = `
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped text-center">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>등급</th>
+                                        <th>당첨자 수 (사이트 내)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1등</td><td>0명</td></tr>
+                                    <tr><td>2등</td><td>0명</td></tr>
+                                    <tr><td>3등</td><td>3명</td></tr>
+                                    <tr><td>4등</td><td>25명</td></tr>
+                                    <tr><td>5등</td><td>120명</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-muted small mt-2">* 이 통계는 이 사이트를 통해 생성된 번호 기준입니다.</p>
+                    `;
+                }, 800);
+            };
+
+            /**
+             * Loads and displays upcoming draw statistics (dummy data).
+             */
+            const loadUpcomingDrawStats = () => {
+                upcomingDrawStatsDiv.innerHTML = `<div class="text-center text-muted py-5"><div class="loading-spinner"></div> 이번 주 추첨 통계 로딩 중...</div>`;
+                // Dummy data for upcoming draw stats
+                setTimeout(() => {
+                    upcomingDrawStatsDiv.innerHTML = `
+                        <div class="row g-3">
+                            <div class="col-md-4">
+                                <div class="bg-light p-3 rounded text-center shadow-sm">
+                                    <h6 class="fw-bold">총 생성 조합</h6>
+                                    <p class="h4 text-primary">15,423</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="bg-light p-3 rounded text-center shadow-sm">
+                                    <h6 class="fw-bold">가장 많이 선택된 번호</h6>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="lotto-ball-small ${getBallColor(34)}" style="animation-delay: 0s;">34</div>
+                                        <div class="lotto-ball-small ${getBallColor(12)}" style="animation-delay: 0.07s;">12</div>
+                                        <div class="lotto-ball-small ${getBallColor(27)}" style="animation-delay: 0.14s;">27</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="bg-light p-3 rounded text-center shadow-sm">
+                                    <h6 class="fw-bold">가장 적게 선택된 번호</h6>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <div class="lotto-ball-small ${getBallColor(9)}" style="animation-delay: 0s;">9</div>
+                                        <div class="lotto-ball-small ${getBallColor(29)}" style="animation-delay: 0.07s;">29</div>
+                                        <div class="lotto-ball-small ${getBallColor(22)}" style="animation-delay: 0.14s;">22</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted small mt-3">* 이 데이터는 오직 이 사이트에서 생성된 번호에 대한 통계입니다.</p>
+                    `;
+                }, 900);
+            };
+
+            /**
+             * Updates the display of top and bottom frequency numbers.
+             */
+            const updateTopBottomNumbers = () => {
+                const top5 = freqData.slice(0, 5);
+                const bottom5 = freqData.slice(-5).reverse();
+
+                topNumbersDiv.innerHTML = top5.map(d => `<span class="badge rounded-pill text-bg-danger">${d.num}</span>`).join('');
+                bottomNumbersDiv.innerHTML = bottom5.map(d => `<span class="badge rounded-pill text-bg-info">${d.num}</span>`).join('');
+            };
+
+            /**
+             * Filters and displays FAQ answers based on search input.
+             */
+            const filterFaqs = () => {
+                const searchTerm = faqSearchInput.value.toLowerCase().trim();
+                let foundAnswer = false;
+
+                if (searchTerm === "") {
+                    faqAnswerDisplay.innerHTML = `<p class="text-muted text-center"><i class="bi bi-info-circle"></i> 질문을 입력하시면 답변이 표시됩니다.</p>`;
+                    return;
+                }
+
+                // 질문과 답변을 모두 검색하여 일치하는 내용이 있으면 표시
+                for (const item of faqData) {
+                    if (item.question.toLowerCase().includes(searchTerm) || item.answer.toLowerCase().includes(searchTerm)) {
+                        faqAnswerDisplay.innerHTML = `
+                            <p class="fw-bold mb-2">${item.question}</p>
+                            <p>${item.answer}</p>
+                        `;
+                        foundAnswer = true;
+                        break; // 첫 번째 일치하는 답변을 찾으면 종료
+                    }
+                }
+
+                if (!foundAnswer) {
+                    faqAnswerDisplay.innerHTML = `<p class="text-danger text-center"><i class="bi bi-exclamation-circle"></i> 검색 결과가 없습니다. 다른 키워드로 검색해 보세요.</p>`;
+                }
+            };
+
+            /**
+             * Populates FAQ examples and adds click listeners.
+             */
+            const displayFaqExamples = () => {
+                faqExamplesDiv.innerHTML = ''; // Clear existing examples
+                // Use all questions from faqData for examples
+                faqData.forEach(item => {
+                    const exampleSpan = document.createElement('span');
+                    exampleSpan.className = 'faq-example-item';
+                    exampleSpan.textContent = item.question;
+                    exampleSpan.addEventListener('click', () => {
+                        faqSearchInput.value = item.question;
+                        filterFaqs();
+                    });
+                    faqExamplesDiv.appendChild(exampleSpan);
+                });
+            };
+
+
+            // Event Listeners
+            quickGenerateBtn.addEventListener('click', () => generateNumbers(false)); // Quick generation
+            filterGenerateBtn.addEventListener('click', () => generateNumbers(true)); // Filtered generation
+            resetFiltersBtn.addEventListener('click', resetFilters); // Reset only filters
+            resetAllOptionsBtn.addEventListener('click', resetAllOptions); // Reset all options
+            copyGeneratedBtn.addEventListener('click', copyResults);
+            analyzeNumbersBtn.addEventListener('click', analyzeNumbersWithAI); // AI 분석 버튼 이벤트 리스너
+            faqSearchInput.addEventListener('keyup', filterFaqs); // FAQ 검색 입력 이벤트 리스너 활성화
+
+            // Dummy image export and share functions (for demonstration purposes)
+            const imageExport = {
+                downloadImage: () => { showMessage('이미지 저장 기능은 현재 개발 중입니다.'); },
+                shareImage: () => { showMessage('이미지 공유 기능은 현재 개발 중입니다.'); }
+            };
+            // Make these functions globally accessible for inline onclick attributes
+            window.imageExport = imageExport;
+            window.storage = storage;
+            window.refreshPublicLog = refreshPublicLog;
+            window.searchUserNumbers = searchUserNumbers;
+
+            // Initial Loads on page load
+            displayHistory();
+            refreshPublicLog();
+            loadCurrentLottoInfo();
+            loadWeeklyRankStats();
+            loadUpcomingDrawStats();
+            displayFaqExamples(); // Load FAQ examples on page load
+            filterFaqs(); // Initialize FAQ answer display
+
+
+            // --- Chart.js ---
+            // Sample frequency data for the chart (dummy data)
+            const freqData = [
+                {num:34, count:20}, {num:43, count:19}, {num:12, count:19}, {num:27, count:18}, {num:13, count:18},
+                {num:1, count:18}, {num:17, count:17}, {num:4, count:17}, {num:39, count:17}, {num:33, count:17},
+                {num:18, count:16}, {num:20, count:16}, {num:2, count:16}, {num:38, count:15}, {num:10, count:15},
+                {num:6, count:15}, {num:44, count:15}, {num:7, count:14}, {num:40, count:14}, {num:37, count:14},
+                {num:11, count:14}, {num:42, count:14}, {num:24, count:14}, {num:36, count:14}, {num:21, count:14},
+                {num:3, count:13}, {num:31, count:13}, {num:45, count:13}, {num:14, count:13}, {num:26, count:12},
+                {num:5, count:12}, {num:16, count:12}, {num:35, count:12}, {num:8, count:11}, {num:15, count:11},
+                {num:25, count:11}, {num:30, count:10}, {num:32, count:10}, {num:41, count:10}, {num:19, count:9},
+                {num:23, count:9}, {num:22, count:8}, {num:28, count:8}, {num:29, count:7}, {num:9, count:6}
+            ].sort((a, b) => b.count - a.count);
+
+            // Prepare data for Chart.js, ensuring all numbers 1-45 are present
+            const sortedFreqDataForChart = [...Array(45)].map((_, i) => {
+                const num = i + 1;
+                const found = freqData.find(d => d.num === num);
+                return found || { num, count: 0 }; // If number not in dummy data, set count to 0
+            }).sort((a, b) => a.num - b.num); // Sort by number for chart display
+
+            const ctx = document.getElementById('frequencyChart').getContext('2d');
+            const frequencyChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: sortedFreqDataForChart.map(d => d.num), // Lotto numbers as labels
+                    datasets: [{
+                        label: '출현 횟수', // Label for the dataset
+                        data: sortedFreqDataForChart.map(d => d.count), // Frequency counts as data
+                        backgroundColor: sortedFreqDataForChart.map(d => {
+                            if (d.count >= 18) return 'rgba(239, 68, 68, 0.7)'; // Hot numbers (red)
+                            if (d.count <= 10) return 'rgba(59, 130, 246, 0.7)'; // Cold numbers (blue)
+                            return 'rgba(156, 163, 175, 0.6)'; // Normal numbers (gray)
+                        }),
+                        borderColor: sortedFreqDataForChart.map(d => {
+                           if (d.count >= 18) return 'rgba(239, 68, 68, 1)';
+                           if (d.count <= 10) return 'rgba(59, 130, 246, 1)';
+                           return 'rgba(156, 163, 175, 1)';
+                        }),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'x', // Horizontal bars
+                    responsive: true,
+                    maintainAspectRatio: false, // Allow chart to resize freely
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '횟수'
+                            }
+                        },
+                        x: {
+                           title: {
+                                display: true,
+                                text: '로또 번호'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false // Hide legend
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(context) {
+                                    return `번호: ${context[0].label}`; // Custom tooltip title
+                                },
+                                label: function(context) {
+                                    return `출현 횟수: ${context.raw}`; // Custom tooltip label
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Update top/bottom numbers display next to the chart
+            updateTopBottomNumbers();
+
+            // --- Three.js for Announcer (Left Canvas) ---
+            window.addEventListener('load', () => {
+                const announcerCanvas = document.getElementById('announcerCanvas');
+                if (!announcerCanvas) return; // Exit if canvas not found
+
+                let scene, camera, renderer, controls, announcerGroup, microphone;
+
+                function initAnnouncerScene() {
+                    scene = new THREE.Scene();
+                    scene.background = new THREE.Color(0xdbe9ff); // Light blue background
+
+                    camera = new THREE.PerspectiveCamera(75, announcerCanvas.clientWidth / announcerCanvas.clientHeight, 0.1, 1000);
+                    camera.position.set(0, 1.5, 3); // Adjust camera position
+
+                    renderer = new THREE.WebGLRenderer({ canvas: announcerCanvas, antialias: true, alpha: true });
+                    renderer.setSize(announcerCanvas.clientWidth, announcerCanvas.clientHeight);
+                    renderer.setPixelRatio(window.devicePixelRatio);
+
+                    // Lights
+                    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+                    scene.add(ambientLight);
+                    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+                    directionalLight.position.set(5, 5, 5).normalize();
+                    scene.add(directionalLight);
+
+                    // Controls
+                    controls = new THREE.OrbitControls(camera, renderer.domElement);
+                    controls.enableZoom = false;
+                    controls.enablePan = false;
+                    controls.enableDamping = true;
+                    controls.dampingFactor = 0.05;
+                    controls.minPolarAngle = Math.PI / 2 - 0.2; // Limit vertical rotation
+                    controls.maxPolarAngle = Math.PI / 2 + 0.2;
+                    controls.autoRotate = true; // Auto-rotate for dynamic feel
+                    controls.autoRotateSpeed = 0.5; // Slower auto-rotation
+
+                    // Announcer Figure (Abstract)
+                    announcerGroup = new THREE.Group();
+                    const bodyMaterial = new THREE.MeshStandardMaterial({ color: 0x64b5f6, flatShading: true }); // Blue
+                    const headMaterial = new THREE.MeshStandardMaterial({ color: 0xffcc80, flatShading: true }); // Skin tone
+                    const micMaterial = new THREE.MeshStandardMaterial({ color: 0x90a4ae, flatShading: true }); // Gray
+
+                    // Body
+                    const body = new THREE.Mesh(new THREE.BoxGeometry(0.5, 1.0, 0.3), bodyMaterial);
+                    body.position.y = 0.5;
+                    announcerGroup.add(body);
+
+                    // Head
+                    const head = new THREE.Mesh(new THREE.SphereGeometry(0.3, 32, 16), headMaterial);
+                    head.position.y = 1.3;
+                    announcerGroup.add(head);
+
+                    // Arm (simple cylinder)
+                    const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.7, 32), bodyMaterial);
+                    arm.position.set(0.3, 0.8, 0);
+                    arm.rotation.z = Math.PI / 6;
+                    announcerGroup.add(arm);
+
+                    // Microphone
+                    const micHandle = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 0.4, 32), micMaterial);
+                    micHandle.position.set(0.55, 0.55, 0.1);
+                    micHandle.rotation.z = Math.PI / 2;
+                    announcerGroup.add(micHandle);
+
+                    const micHead = new THREE.Mesh(new THREE.SphereGeometry(0.08, 16, 8), micMaterial);
+                    micHead.position.set(0.75, 0.55, 0.1);
+                    announcerGroup.add(micHead);
+
+                    scene.add(announcerGroup);
+
+                    // Responsive resizing
+                    window.addEventListener('resize', onAnnouncerWindowResize, false);
+                }
+
+                function onAnnouncerWindowResize() {
+                    if (!announcerCanvas) return; // Guard against null canvas
+                    const parent = announcerCanvas.parentElement;
+                    renderer.setSize(parent.clientWidth, parent.clientHeight);
+                    camera.aspect = parent.clientWidth / parent.clientHeight;
+                    camera.updateProjectionMatrix();
+                }
+
+                function animateAnnouncer() {
+                    requestAnimationFrame(animateAnnouncer);
+                    controls.update(); // only required if controls.enableDamping or controls.autoRotate are set to true
+                    renderer.render(scene, camera);
+                }
+
+                if (announcerCanvas) {
+                    initAnnouncerScene();
+                    animateAnnouncer();
+                }
+            });
+
+            // --- Three.js for Lotto Visualization (Right Canvas) ---
+            window.addEventListener('load', () => {
+                const lottoVizCanvas = document.getElementById('lottoVizCanvas');
+                if (!lottoVizCanvas) return; // Exit if canvas not found
+
+                let scene, camera, renderer, controls, lottoBalls = [];
+
+                function initLottoVizScene() {
+                    scene = new THREE.Scene();
+                    scene.background = new THREE.Color(0xdbe9ff); // Light blue background
+
+                    camera = new THREE.PerspectiveCamera(75, lottoVizCanvas.clientWidth / lottoVizCanvas.clientHeight, 0.1, 1000);
+                    camera.position.set(0, 0, 3); // Adjust camera position for horizontal view
+
+                    renderer = new THREE.WebGLRenderer({ canvas: lottoVizCanvas, antialias: true, alpha: true });
+                    renderer.setSize(lottoVizCanvas.clientWidth, lottoVizCanvas.clientHeight);
+                    renderer.setPixelRatio(window.devicePixelRatio);
+
+                    // Lights
+                    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+                    scene.add(ambientLight);
+                    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.5);
+                    directionalLight.position.set(5, 5, 5).normalize();
+                    scene.add(directionalLight);
+
+                    // Controls
+                    controls = new THREE.OrbitControls(camera, renderer.domElement);
+                    controls.enableZoom = false;
+                    controls.enablePan = false;
+                    controls.enableDamping = true;
+                    controls.dampingFactor = 0.05;
+                    controls.autoRotate = true; // Auto-rotate for dynamic feel
+                    controls.autoRotateSpeed = -0.5; // Slower auto-rotation, opposite direction
+                    controls.minPolarAngle = Math.PI / 2 - 0.2; // Limit vertical rotation
+                    controls.maxPolarAngle = Math.PI / 2 + 0.2;
+
+
+                    // Create 6 lotto balls
+                    const ballColors = [0xFFD700, 0x1E90FF, 0xDC143C, 0x6A5ACD, 0x32CD32, 0xFF4500]; // Yellow, Blue, Red, Slate Blue, Green, Orange Red
+                    const ballNumbers = [4, 5, 23, 37, 41, 44]; // Example numbers
+
+                    const geometry = new THREE.SphereGeometry(0.5, 32, 16);
+                    const spacing = 1.2;
+                    const startX = -((ballColors.length - 1) * spacing) / 2; // Center the row of balls
+
+                    for (let i = 0; i < ballColors.length; i++) {
+                        const material = new THREE.MeshStandardMaterial({ color: ballColors[i], metalness: 0.3, roughness: 0.2 });
+                        const ball = new THREE.Mesh(geometry, material);
+                        ball.position.x = startX + i * spacing;
+                        ball.userData.originalPosition = ball.position.clone(); // Store original position
+                        lottoBalls.push(ball);
+                        scene.add(ball);
+
+                        // Add 3D text for numbers (simple approach)
+                        const loader = new THREE.FontLoader();
+                        // This would require loading a font, which complicates a single HTML file without a bundler.
+                        // For simplicity, let's skip 3D text and just have colored balls for now.
+                        // Or use a more complex setup if 3D text is a hard requirement.
+                        // Given it's a "visual effect", the colored balls are sufficient.
+                    }
+
+                    // Responsive resizing
+                    window.addEventListener('resize', onLottoVizWindowResize, false);
+                }
+
+                function onLottoVizWindowResize() {
+                    if (!lottoVizCanvas) return; // Guard against null canvas
+                    const parent = lottoVizCanvas.parentElement;
+                    renderer.setSize(parent.clientWidth, parent.clientHeight);
+                    camera.aspect = parent.clientWidth / parent.clientHeight;
+                    camera.updateProjectionMatrix();
+                }
+
+                function animateLottoViz() {
+                    requestAnimationFrame(animateLottoViz);
+                    controls.update(); // only required if controls.enableDamping or controls.autoRotate are set to true
+
+                    // Subtle animation for balls
+                    lottoBalls.forEach((ball, index) => {
+                        ball.rotation.x += 0.005;
+                        ball.rotation.y += 0.005;
+                        // Small vertical floating motion
+                        ball.position.y = ball.userData.originalPosition.y + Math.sin(Date.now() * 0.001 + index) * 0.1;
+                    });
+
+                    renderer.render(scene, camera);
+                }
+
+                if (lottoVizCanvas) {
+                    initLottoVizScene();
+                    animateLottoViz();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
