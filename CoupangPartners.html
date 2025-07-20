@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠팡파트너스 전문몰 - 최고의 상품을 만나보세요</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* CSS 변수 정의 */
+        :root {
+            --primary-color: #cc6b49;
+            --secondary-color: #f5f5f5;
+            --accent-color: #8b4513;
+            --text-color: #333;
+            --light-gray: #e9e9e9;
+            --white: #ffffff;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --info-color: #17a2b8;
+        }
+
+        /* 기본 스타일 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            min-height: 100vh; /* 최소 높이 설정 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 헤더 */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem; /* 요소 간 간격 */
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center; /* 모바일에서 중앙 정렬 */
+        }
+
+        /* 버튼 기본 스타일 */
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px; /* 더 둥근 모서리 */
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex; /* 아이콘과 텍스트 정렬 */
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem; /* 아이콘과 텍스트 간격 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 그림자 추가 */
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--light-gray);
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-success {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+        .btn-info {
+            background-color: var(--info-color);
+            color: white;
+        }
+
+        .btn-info:hover {
+            background-color: #138496;
+        }
+
+        .btn-small {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+
+        /* 메인 콘텐츠 */
+        main {
+            flex-grow: 1; /* 푸터가 항상 하단에 붙도록 */
+            padding: 2rem 0;
+        }
+
+        .welcome-section {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .welcome-section h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .welcome-section p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .welcome-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .welcome-badge.success {
+            background: var(--success-color);
+        }
+
+        .welcome-badge.warning {
+            background: var(--warning-color);
+        }
+
+        /* 검색 및 필터 */
+        .search-filter-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .search-container {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-input, .filter-select {
+            flex: 1;
+            min-width: 250px;
+            padding: 12px;
+            border: 2px solid var(--light-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus, .filter-select:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .filter-select {
+            min-width: 150px;
+        }
+
+        /* 상품 그리드 */
+        .products-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+            line-height: 1.3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; /* 2줄로 제한 */
+            -webkit-box-orient: vertical;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .product-category-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* 3줄로 제한 */
+            -webkit-box-orient: vertical;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* 관리자 패널 */
+        .admin-panel {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            display: none; /* 기본 숨김 */
+        }
+
+        .admin-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* 상품 폼 */
+        .product-form-section {
+            background: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            display: none; /* 기본 숨김 */
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--light-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* 모달 */
+        .modal {
+            display: none; /* 기본 숨김 */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh; /* 모달 최대 높이 */
+            overflow-y: auto; /* 내용이 넘치면 스크롤 */
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* 푸터 */
+        footer {
+            background: var(--text-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: auto; /* 푸터가 항상 하단에 붙도록 */
+        }
+
+        /* 메시지 알림 */
+        .message-alert {
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .message-alert.show {
+            opacity: 1;
+        }
+
+        .message-alert.success {
+            background-color: var(--success-color);
+        }
+
+        .message-alert.error {
+            background-color: var(--danger-color);
+        }
+
+        .message-alert.info {
+            background-color: var(--info-color);
+        }
+
+        /* 로딩 및 빈 상태 */
+        .loading, .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+            grid-column: 1 / -1; /* 그리드 전체 너비 사용 */
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        /* 애니메이션 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        /* 유틸리티 */
+        .hidden {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 { margin-top: 2rem; }
+        .mb-2 { margin-bottom: 2rem; }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .btn {
+                width: auto; /* 모바일에서 버튼 너비 조정 */
+                flex-grow: 1; /* flex item으로 성장 */
+            }
+
+            .welcome-section h1 {
+                font-size: 2rem;
+            }
+
+            .welcome-section p {
+                font-size: 1rem;
+            }
+
+            .search-container {
+                flex-direction: column;
+            }
+
+            .search-input, .filter-select {
+                min-width: 100%;
+            }
+
+            .section-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .modal-content {
+                margin: 5% auto;
+                width: 95%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+
+            .welcome-section {
+                padding: 2rem 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+
+            .nav-buttons {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <i class="fas fa-shopping-bag"></i> 쿠팡파트너스 전문몰
+                </a>
+                <div class="nav-buttons">
+                    <button class="btn btn-primary" onclick="showSection('home')">
+                        <i class="fas fa-home"></i> 홈
+                    </button>
+                    <!-- 관리자 로그인/로그아웃 버튼 -->
+                    <button id="adminLoginBtn" class="btn btn-secondary" onclick="openLoginModal()">
+                        <i class="fas fa-user-lock"></i> 관리자 로그인
+                    </button>
+                    <button id="adminLogoutBtn" class="btn btn-secondary hidden" onclick="logoutAdmin()">
+                        <i class="fas fa-sign-out-alt"></i> 관리자 로그아웃
+                    </button>
+                    <button class="btn btn-secondary" onclick="openAddProductModal()">
+                        <i class="fas fa-plus"></i> 상품 추가
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- 메시지 알림 영역 -->
+            <div id="messageAlert" class="message-alert hidden"></div>
+
+            <!-- Home Section -->
+            <div id="home-section">
+                <div class="welcome-section fade-in">
+                    <h1><i class="fas fa-star"></i> 최고의 상품을 만나보세요!</h1>
+                    <p>쿠팡파트너스 전문몰에서 엄선된 상품들을 만나보세요. 최저가 보장과 빠른 배송으로 만족스러운 쇼핑을 경험하실 수 있습니다.</p>
+                    <div class="welcome-badges">
+                        <span class="welcome-badge">
+                            <i class="fas fa-shipping-fast"></i> 빠른 배송
+                        </span>
+                        <span class="welcome-badge success">
+                            <i class="fas fa-shield-alt"></i> 품질 보장
+                        </span>
+                        <span class="welcome-badge warning">
+                            <i class="fas fa-tag"></i> 최저가 보장
+                        </span>
+                    </div>
+                </div>
+
+                <div class="search-filter-section fade-in">
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="searchInput" placeholder="상품명을 입력하세요...">
+                        <select class="filter-select" id="categoryFilter">
+                            <option value="">모든 카테고리</option>
+                            <option value="전자제품">전자제품</option>
+                            <option value="의류">의류</option>
+                            <option value="생활용품">생활용품</option>
+                            <option value="식품">식품</option>
+                            <option value="화장품">화장품</option>
+                            <option value="도서">도서</option>
+                            <option value="스포츠">스포츠</option>
+                            <option value="기타">기타</option>
+                        </select>
+                        <select class="filter-select" id="priceFilter">
+                            <option value="">모든 가격대</option>
+                            <option value="0-10000">1만원 이하</option>
+                            <option value="10000-50000">1만원 - 5만원</option>
+                            <option value="50000-100000">5만원 - 10만원</option>
+                            <option value="100000-">10만원 이상</option>
+                        </select>
+                        <button class="btn btn-primary" onclick="filterProducts()">
+                            <i class="fas fa-search"></i> 검색
+                        </button>
+                    </div>
+                </div>
+
+                <div class="products-section fade-in">
+                    <div class="section-header">
+                        <h2 class="section-title"><i class="fas fa-gift"></i> 추천 상품</h2>
+                        <div>
+                            <span id="productCount">상품 개수: 0개</span>
+                        </div>
+                    </div>
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Section -->
+            <div id="admin-section" class="admin-panel">
+                <div class="section-header">
+                    <h2 class="section-title"><i class="fas fa-chart-bar"></i> 관리자 대시보드</h2>
+                </div>
+
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalProducts">0</div>
+                        <div class="stat-label">총 상품 수</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalCategories">0</div>
+                        <div class="stat-label">카테고리 수</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="avgPrice">0원</div>
+                        <div class="stat-label">평균 가격</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="mostExpensive">0원</div>
+                        <div class="stat-label">최고가 상품</div>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-3 mb-8">
+                    <button class="btn btn-success" onclick="openAddProductModal()">
+                        <i class="fas fa-plus"></i> 새 상품 추가
+                    </button>
+                    <button class="btn btn-danger" onclick="showConfirmModal('모든 상품을 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.', clearAllProducts)">
+                        <i class="fas fa-trash"></i> 모든 상품 삭제
+                    </button>
+                    <button class="btn btn-info" onclick="exportProducts()">
+                        <i class="fas fa-download"></i> 데이터 내보내기
+                    </button>
+                    <input type="file" id="importFile" accept=".json" style="display: none;" onchange="importProducts(event)">
+                    <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()">
+                        <i class="fas fa-upload"></i> 데이터 가져오기
+                    </button>
+                </div>
+
+                <div class="products-section">
+                    <h3>상품 관리</h3>
+                    <div class="products-grid" id="adminProductsGrid">
+                        <!-- Admin products will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeProductModal()">&times;</span>
+            <h2 id="modalTitle">상품 추가</h2>
+            <form id="productForm">
+                <input type="hidden" id="productId"> <!-- 상품 ID 저장용 -->
+                <div class="form-group">
+                    <label for="productName" class="form-label">상품명 *</label>
+                    <input type="text" class="form-input" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice" class="form-label">가격 *</label>
+                    <input type="number" class="form-input" id="productPrice" required min="0">
+                </div>
+                <div class="form-group">
+                    <label for="productCategory" class="form-label">카테고리 *</label>
+                    <select class="form-input" id="productCategory" required>
+                        <option value="">카테고리 선택</option>
+                        <option value="전자제품">전자제품</option>
+                        <option value="의류">의류</option>
+                        <option value="생활용품">생활용품</option>
+                        <option value="식품">식품</option>
+                        <option value="화장품">화장품</option>
+                        <option value="도서">도서</option>
+                        <option value="스포츠">스포츠</option>
+                        <option value="기타">기타</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription" class="form-label">상품 설명</label>
+                    <textarea class="form-input form-textarea" id="productDescription" placeholder="상품에 대한 자세한 설명을 입력하세요..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="productUrl" class="form-label">쿠팡 상품 URL *</label>
+                    <input type="url" class="form-input" id="productUrl" required placeholder="https://www.coupang.com/vp/products/...">
+                </div>
+                <div class="form-group">
+                    <label for="productImage" class="form-label">이미지 URL</label>
+                    <input type="url" class="form-input" id="productImage" placeholder="https://example.com/image.jpg">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fas fa-save"></i> 저장
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="closeProductModal()">
+                        <i class="fas fa-times"></i> 취소
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Confirm Modal (커스텀 확인 모달) -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeConfirmModal()">&times;</span>
+            <h2 id="confirmModalTitle">확인</h2>
+            <p id="confirmModalMessage" class="mb-2"></p>
+            <div class="form-actions">
+                <button class="btn btn-danger" id="confirmModalConfirmBtn">확인</button>
+                <button class="btn btn-secondary" onclick="closeConfirmModal()">취소</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal (로그인 모달) -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeLoginModal()">&times;</span>
+            <h2>관리자 로그인</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="adminPassword" class="form-label">비밀번호</label>
+                    <input type="password" class="form-input" id="adminPassword" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> 로그인
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="closeLoginModal()">
+                        <i class="fas fa-times"></i> 취소
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 쿠팡파트너스 전문몰. 이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 전역 변수
+        let products = []; // 상품 데이터를 저장할 배열
+        let currentEditingId = null; // 현재 수정 중인 상품의 ID
+        const ADMIN_PASSWORD = "admin"; // 관리자 비밀번호 (간단한 예시, 실제 사용 시 더 강력한 보안 필요)
+        let isAdminLoggedIn = false; // 관리자 로그인 상태
+
+        // 앱 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            loadProducts(); // 로컬 스토리지에서 상품 로드
+            checkAdminStatus(); // 관리자 로그인 상태 확인
+            showSection('home'); // 초기 화면은 홈 섹션
+
+            // 검색 및 필터 입력 변경 시 이벤트 리스너
+            document.getElementById('searchInput').addEventListener('input', filterProducts);
+            document.getElementById('categoryFilter').addEventListener('change', filterProducts);
+            document.getElementById('priceFilter').addEventListener('change', filterProducts);
+
+            // 상품 추가/수정 폼 제출 이벤트 리스너
+            document.getElementById('productForm').addEventListener('submit', saveProduct);
+            // 로그인 폼 제출 이벤트 리스너
+            document.getElementById('loginForm').addEventListener('submit', handleLogin);
+
+            // 로컬 스토리지에 상품이 없으면 샘플 데이터 로드 (초기 실행 시)
+            if (products.length === 0) {
+                loadSampleData();
+            }
+        });
+
+        // 상품 데이터를 로컬 스토리지에서 로드
+        function loadProducts() {
+            const savedProducts = localStorage.getItem('coupangProducts');
+            if (savedProducts) {
+                products = JSON.parse(savedProducts);
+            }
+            renderProducts(); // 상품 목록 렌더링
+            updateStats(); // 관리자 통계 업데이트
+        }
+
+        // 상품 데이터를 로컬 스토리지에 저장
+        function saveProductsToLocalStorage() {
+            localStorage.setItem('coupangProducts', JSON.stringify(products));
+        }
+
+        // 관리자 로그인 상태 확인 및 UI 업데이트
+        function checkAdminStatus() {
+            isAdminLoggedIn = sessionStorage.getItem('isAdminLoggedIn') === 'true';
+            updateAdminUI();
+        }
+
+        // 관리자 UI (버튼, 섹션) 업데이트
+        function updateAdminUI() {
+            const adminLoginBtn = document.getElementById('adminLoginBtn');
+            const adminLogoutBtn = document.getElementById('adminLogoutBtn');
+            const adminSection = document.getElementById('admin-section');
+
+            if (isAdminLoggedIn) {
+                adminLoginBtn.classList.add('hidden');
+                adminLogoutBtn.classList.remove('hidden');
+                // 관리자 섹션은 showSection 함수에서 제어
+            } else {
+                adminLoginBtn.classList.remove('hidden');
+                adminLogoutBtn.classList.add('hidden');
+                adminSection.classList.add('hidden'); // 로그아웃 시 관리자 섹션 숨김
+                showSection('home'); // 홈 섹션으로 강제 전환
+            }
+        }
+
+        // 섹션 전환 함수 (홈 또는 관리자)
+        function showSection(section) {
+            document.getElementById('home-section').classList.toggle('hidden', section !== 'home');
+            const adminSection = document.getElementById('admin-section');
+
+            if (section === 'admin') {
+                if (isAdminLoggedIn) {
+                    adminSection.classList.remove('hidden');
+                    renderAdminProducts(); // 관리자 섹션일 때 관리용 상품 목록 렌더링
+                    updateStats(); // 관리자 통계 업데이트
+                } else {
+                    // 로그인되지 않은 상태에서 관리자 섹션 접근 시도 시 로그인 모달 표시
+                    openLoginModal();
+                    showMessage('관리자만 접근할 수 있습니다. 로그인해주세요.', 'error');
+                    document.getElementById('home-section').classList.remove('hidden'); // 홈 섹션 유지
+                    adminSection.classList.add('hidden');
+                }
+            } else {
+                adminSection.classList.add('hidden');
+            }
+        }
+
+        // 상품 목록 렌더링 (홈 화면)
+        function renderProducts(productsToRender = products) {
+            const grid = document.getElementById('productsGrid');
+            const productCountElement = document.getElementById('productCount');
+
+            productCountElement.textContent = `상품 개수: ${productsToRender.length}개`;
+
+            if (productsToRender.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-box-open"></i>
+                        <h3>등록된 상품이 없습니다</h3>
+                        <p>관리자 페이지에서 상품을 추가해주세요.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // 상품 카드 HTML 생성
+            grid.innerHTML = productsToRender.map(product => `
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        ${product.image ?
+                            `<img src="${product.image}" alt="${product.name}" onerror="this.onerror=null;this.src='https://placehold.co/200x200/F5F5F5/CC6B49?text=No+Image';">` :
+                            `<i class="fas fa-image"></i>`
+                        }
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <div class="product-price">${formatPrice(product.price)}원</div>
+                        <div class="product-category-tag">
+                            ${product.category}
+                        </div>
+                        <p class="product-description">${product.description || '상품 설명이 없습니다.'}</p>
+                        <div class="product-actions">
+                            <a href="${product.url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">
+                                <i class="fas fa-shopping-cart"></i> 구매하기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 관리자 화면의 상품 목록 렌더링
+        function renderAdminProducts() {
+            const grid = document.getElementById('adminProductsGrid');
+
+            if (!isAdminLoggedIn) {
+                grid.innerHTML = ''; // 로그인되지 않았다면 내용 비움
+                return;
+            }
+
+            if (products.length === 0) {
+                grid.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-plus-circle"></i>
+                        <h3>상품을 추가해주세요</h3>
+                        <p>새 상품 추가 버튼을 클릭하여 첫 번째 상품을 등록하세요.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            // 관리자용 상품 카드 HTML 생성 (수정/삭제 버튼 포함)
+            grid.innerHTML = products.map(product => `
+                <div class="product-card">
+                    <div class="product-image">
+                        ${product.image ?
+                            `<img src="${product.image}" alt="${product.name}" onerror="this.onerror=null;this.src='https://placehold.co/200x200/F5F5F5/CC6B49?text=No+Image';">` :
+                            `<i class="fas fa-image"></i>`
+                        }
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <div class="product-price">${formatPrice(product.price)}원</div>
+                        <div class="product-category-tag">
+                            ${product.category}
+                        </div>
+                        <p class="product-description">${product.description || '상품 설명이 없습니다.'}</p>
+                        <div class="product-actions">
+                            <button class="btn btn-primary btn-small" onclick="editProduct(${product.id})">
+                                <i class="fas fa-edit"></i> 수정
+                            </button>
+                            <button class="btn btn-danger btn-small" onclick="showConfirmModal('이 상품을 삭제하시겠습니까?', () => deleteProduct(${product.id}))">
+                                <i class="fas fa-trash"></i> 삭제
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 상품 검색 및 필터링
+        function filterProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const priceFilter = document.getElementById('priceFilter').value;
+
+            let filtered = products.filter(product => {
+                const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
+                                      (product.description && product.description.toLowerCase().includes(searchTerm));
+                const matchesCategory = !categoryFilter || product.category === categoryFilter;
+
+                let matchesPrice = true;
+                if (priceFilter) {
+                    const price = product.price;
+                    if (priceFilter === '0-10000') {
+                        matchesPrice = price <= 10000;
+                    } else if (priceFilter === '10000-50000') {
+                        matchesPrice = price > 10000 && price <= 50000;
+                    } else if (priceFilter === '50000-100000') {
+                        matchesPrice = price > 50000 && price <= 100000;
+                    } else if (priceFilter === '100000-') {
+                        matchesPrice = price > 100000;
+                    }
+                }
+                return matchesSearch && matchesCategory && matchesPrice;
+            });
+            renderProducts(filtered); // 필터링된 상품 목록 렌더링
+        }
+
+        // 상품 추가/수정 모달 열기
+        function openAddProductModal() {
+            if (!isAdminLoggedIn) {
+                showMessage('관리자만 상품을 추가/수정할 수 있습니다. 로그인해주세요.', 'error');
+                openLoginModal();
+                return;
+            }
+            currentEditingId = null; // 새 상품 추가 모드
+            document.getElementById('modalTitle').textContent = '상품 추가';
+            document.getElementById('productForm').reset(); // 폼 초기화
+            document.getElementById('productId').value = ''; // 숨겨진 ID 필드 초기화
+            document.getElementById('productModal').classList.add('show');
+        }
+
+        // 상품 수정 모달 열기
+        function editProduct(id) {
+            if (!isAdminLoggedIn) {
+                showMessage('관리자만 상품을 추가/수정할 수 있습니다. 로그인해주세요.', 'error');
+                openLoginModal();
+                return;
+            }
+            currentEditingId = id; // 수정 모드
+            document.getElementById('modalTitle').textContent = '상품 수정';
+            const productToEdit = products.find(p => p.id === id);
+
+            if (productToEdit) {
+                document.getElementById('productId').value = productToEdit.id;
+                document.getElementById('productName').value = productToEdit.name;
+                document.getElementById('productPrice').value = productToEdit.price;
+                document.getElementById('productCategory').value = productToEdit.category;
+                document.getElementById('productDescription').value = productToEdit.description || '';
+                document.getElementById('productUrl').value = productToEdit.url;
+                document.getElementById('productImage').value = productToEdit.image || '';
+                document.getElementById('productModal').classList.add('show');
+            }
+        }
+
+        // 상품 모달 닫기
+        function closeProductModal() {
+            document.getElementById('productModal').classList.remove('show');
+            document.getElementById('productForm').reset();
+            currentEditingId = null;
+        }
+
+        // 상품 저장 (추가 또는 수정)
+        function saveProduct(event) {
+            event.preventDefault(); // 폼 제출 기본 동작 방지
+
+            if (!isAdminLoggedIn) {
+                showMessage('관리자 권한이 없습니다. 로그인해주세요.', 'error');
+                return;
+            }
+
+            const name = document.getElementById('productName').value;
+            const price = parseFloat(document.getElementById('productPrice').value);
+            const category = document.getElementById('productCategory').value;
+            const description = document.getElementById('productDescription').value;
+            const url = document.getElementById('productUrl').value;
+            const image = document.getElementById('productImage').value;
+
+            if (!name || isNaN(price) || !category || !url) {
+                showMessage('모든 필수 항목(*)을 입력해주세요.', 'error');
+                return;
+            }
+
+            if (currentEditingId) {
+                // 상품 수정
+                const index = products.findIndex(p => p.id === currentEditingId);
+                if (index !== -1) {
+                    products[index] = { id: currentEditingId, name, price, category, description, url, image };
+                    showMessage('상품이 성공적으로 수정되었습니다!', 'success');
+                }
+            } else {
+                // 새 상품 추가
+                const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+                products.push({ id: newId, name, price, category, description, url, image });
+                showMessage('상품이 성공적으로 추가되었습니다!', 'success');
+            }
+
+            saveProductsToLocalStorage(); // 변경사항 로컬 스토리지에 저장
+            renderProducts(); // 홈 화면 상품 목록 업데이트
+            renderAdminProducts(); // 관리자 화면 상품 목록 업데이트
+            updateStats(); // 통계 업데이트
+            closeProductModal(); // 모달 닫기
+        }
+
+        // 상품 삭제
+        function deleteProduct(id) {
+            if (!isAdminLoggedIn) {
+                showMessage('관리자 권한이 없습니다. 로그인해주세요.', 'error');
+                return;
+            }
+            products = products.filter(p => p.id !== id);
+            saveProductsToLocalStorage();
+            renderProducts();
+            renderAdminProducts();
+            updateStats();
+            showMessage('상품이 성공적으로 삭제되었습니다!', 'success');
+        }
+
+        // 모든 상품 삭제
+        function clearAllProducts() {
+            if (!isAdminLoggedIn) {
+                showMessage('관리자 권한이 없습니다. 로그인해주세요.', 'error');
+                return;
+            }
+            products = [];
+            saveProductsToLocalStorage();
+            renderProducts();
+            renderAdminProducts();
+            updateStats();
+            showMessage('모든 상품이 성공적으로 삭제되었습니다!', 'success');
+        }
+
+        // 관리자 통계 업데이트
+        function updateStats() {
+            const totalProducts = products.length;
+            const categories = [...new Set(products.map(p => p.category))];
+            const totalCategories = categories.length;
+            const totalPrice = products.reduce((sum, p) => sum + p.price, 0);
+            const avgPrice = totalProducts > 0 ? totalPrice / totalProducts : 0;
+            const mostExpensive = products.length > 0 ? Math.max(...products.map(p => p.price)) : 0;
+
+            document.getElementById('totalProducts').textContent = totalProducts;
+            document.getElementById('totalCategories').textContent = totalCategories;
+            document.getElementById('avgPrice').textContent = `${formatPrice(Math.round(avgPrice))}원`;
+            document.getElementById('mostExpensive').textContent = `${formatPrice(mostExpensive)}원`;
+        }
+
+        // 가격 포맷팅 유틸리티
+        function formatPrice(price) {
+            return new Intl.NumberFormat('ko-KR').format(price);
+        }
+
+        // 샘플 데이터 로드 (초기 실행 시)
+        function loadSampleData() {
+            products = [
+                { id: 1, name: '삼성전자 갤럭시 S24 울트라 자급제 256GB', price: 1698000, category: '전자제품', description: '혁신적인 AI 기능과 강력한 카메라 성능을 자랑하는 최신 스마트폰.', url: 'https://www.coupang.com/vp/products/1234567890', image: 'https://placehold.co/400x200/CC6B49/FFFFFF?text=Galaxy+S24' },
+                { id: 2, name: '애플 에어팟 프로 2세대 (USB-C)', price: 329000, category: '전자제품', description: '향상된 노이즈 캔슬링과 적응형 오디오를 제공하는 무선 이어폰.', url: 'https://www.coupang.com/vp/products/0987654321', image: 'https://placehold.co/400x200/CC6B49/FFFFFF?text=AirPods+Pro' },
+                { id: 3, name: '다이슨 에어랩 멀티스타일러 컴플리트', price: 699000, category: '생활용품', description: '다양한 헤어 스타일링을 위한 혁신적인 기기.', url: 'https://www.coupang.com/vp/products/1122334455', image: 'https://placehold.co/400x200/CC6B49/FFFFFF?text=Dyson+Airwrap' },
+                { id: 4, name: '제주 삼다수 2L x 12병', price: 12000, category: '식품', description: '청정 제주의 깨끗한 물, 온 가족이 마시기에 좋습니다.', url: 'https://www.coupang.com/vp/products/5566778899', image: 'https://placehold.co/400x200/CC6B49/FFFFFF?text=Samdasoo' },
+                { id: 5, name: '나이키 에어 포스 1 로우', price: 139000, category: '의류', description: '클래식한 디자인과 편안한 착용감의 스니커즈.', url: 'https://www.coupang.com/vp/products/9988776655', image: 'https://placehold.co/400x200/CC6B49/FFFFFF?text=Nike+AF1' },
+                { id: 6, name: 'LG 스탠바이미 Go 27LX5QKNA', price: 1190000, category: '전자제품', description: '어디서든 즐기는 포터블 스크린, 캠핑과 야외 활동에 최적화.', url: 'https://www.coupang.com/vp/products/2233445566', image: 'https://placehold.co/400x200/CC6B49/FFFFFF?text=StandbyME+Go' },
+                { id: 7, name: '설화수 윤조에센스 60ml', price: 90000, category: '화장품', description: '피부 균형을 잡아주는 한방 부스팅 에센스.', url: 'https://www.coupang.com/vp/products/3344556677', image: 'https://placehold.co/400x200/CC6B49/FFFFFF?text=Sulwhasoo' },
+                { id: 8, name: '트레비 탄산수 플레인 350ml x 24캔', price: 15000, category: '식품', description: '상쾌한 탄산감으로 갈증 해소에 좋습니다.', url: 'https://www.coupang.com/vp/products/4455667788', image: 'https://placehold.co/400x200/CC6B49/FFFFFF?text=Trevi' },
+            ];
+            saveProductsToLocalStorage(); // 샘플 데이터 저장
+            renderProducts();
+            updateStats();
+        }
+
+        // 데이터 내보내기 (JSON 파일로 다운로드)
+        function exportProducts() {
+            if (!isAdminLoggedIn) {
+                showMessage('관리자 권한이 없습니다. 로그인해주세요.', 'error');
+                return;
+            }
+            const dataStr = JSON.stringify(products, null, 2);
+            const blob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'coupang_products.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showMessage('상품 데이터가 성공적으로 내보내졌습니다.', 'info');
+        }
+
+        // 데이터 가져오기 (JSON 파일 업로드)
+        function importProducts(event) {
+            if (!isAdminLoggedIn) {
+                showMessage('관리자 권한이 없습니다. 로그인해주세요.', 'error');
+                return;
+            }
+            const file = event.target.files[0];
+            if (!file) {
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const importedData = JSON.parse(e.target.result);
+                    if (Array.isArray(importedData)) {
+                        // 기존 상품을 모두 삭제하고 가져온 데이터로 대체
+                        products = importedData.map((p, index) => ({
+                            // 새 ID 할당 (기존 ID가 충돌할 수 있으므로)
+                            id: products.length + index + 1, // 간단한 새 ID 생성
+                            name: p.name,
+                            price: p.price,
+                            category: p.category,
+                            description: p.description || '',
+                            url: p.url,
+                            image: p.image || ''
+                        }));
+                        saveProductsToLocalStorage();
+                        renderProducts();
+                        renderAdminProducts();
+                        updateStats();
+                        showMessage('상품 데이터가 성공적으로 가져와졌습니다!', 'success');
+                    } else {
+                        throw new Error('유효하지 않은 JSON 형식입니다. 상품 배열을 예상합니다.');
+                    }
+                } catch (error) {
+                    console.error("상품 가져오기 오류:", error);
+                    showMessage(`상품 가져오기 실패: ${error.message}`, 'error');
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        // 커스텀 확인 모달 표시
+        function showConfirmModal(message, callback) {
+            document.getElementById('confirmModalMessage').textContent = message;
+            const confirmBtn = document.getElementById('confirmModalConfirmBtn');
+
+            // 기존 이벤트 리스너 제거
+            const oldConfirmBtn = confirmBtn.cloneNode(true);
+            confirmBtn.parentNode.replaceChild(oldConfirmBtn, confirmBtn);
+            const newConfirmBtn = document.getElementById('confirmModalConfirmBtn');
+
+            // 새 이벤트 리스너 추가
+            newConfirmBtn.onclick = function() {
+                callback();
+                closeConfirmModal();
+            };
+
+            document.getElementById('confirmModal').classList.add('show');
+        }
+
+        // 커스텀 확인 모달 닫기
+        function closeConfirmModal() {
+            document.getElementById('confirmModal').classList.remove('show');
+        }
+
+        // 메시지 알림 표시
+        function showMessage(text, type) {
+            const messageAlert = document.getElementById('messageAlert');
+            messageAlert.textContent = text;
+            messageAlert.className = `message-alert show ${type}`; // 클래스 초기화 및 추가
+
+            setTimeout(() => {
+                messageAlert.classList.remove('show');
+            }, 3000); // 3초 후 사라짐
+        }
+
+        // 로그인 모달 열기
+        function openLoginModal() {
+            document.getElementById('loginModal').classList.add('show');
+            document.getElementById('adminPassword').value = ''; // 비밀번호 입력 필드 초기화
+        }
+
+        // 로그인 모달 닫기
+        function closeLoginModal() {
+            document.getElementById('loginModal').classList.remove('show');
+        }
+
+        // 로그인 처리
+        function handleLogin(event) {
+            event.preventDefault();
+            const password = document.getElementById('adminPassword').value;
+
+            if (password === ADMIN_PASSWORD) {
+                isAdminLoggedIn = true;
+                sessionStorage.setItem('isAdminLoggedIn', 'true'); // 세션 스토리지에 로그인 상태 저장
+                showMessage('관리자 로그인 성공!', 'success');
+                closeLoginModal();
+                showSection('admin'); // 관리자 섹션으로 이동
+                updateAdminUI();
+            } else {
+                showMessage('비밀번호가 올바르지 않습니다.', 'error');
+                document.getElementById('adminPassword').value = ''; // 비밀번호 초기화
+            }
+        }
+
+        // 관리자 로그아웃
+        function logoutAdmin() {
+            isAdminLoggedIn = false;
+            sessionStorage.removeItem('isAdminLoggedIn'); // 세션 스토리지에서 로그인 상태 제거
+            showMessage('관리자 로그아웃 성공!', 'info');
+            updateAdminUI();
+            showSection('home'); // 홈 섹션으로 이동
+        }
+
+    </script>
+</body>
+</html>
